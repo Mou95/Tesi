@@ -24,17 +24,41 @@ Il compito assegnato allo stagista è stato quello di integrare questo meccanism
 \end{itemize}
 Il progetto si divideva quindi in tre parti:
 \begin{itemize}
-	\item analisi preliminare degli SDK delle principali piattaforme per il \gls{nlp} presenti sul mercato, in modo da valutarne pregi e difetti;
+	\item analisi preliminare degli SDK delle principali piattaforme per il \gls{NLP} presenti sul mercato, in modo da valutarne pregi e difetti;
 	\item creazione della logica per la gestione delle domande utente all'interno della piattaforma scelta;
 	\item integrazione di questa nuova funzionalità nel software utilizzato da \azienda{} per la gestione dei \gls{chatbot}. 
 \end{itemize}
-Visto il bisogno di un periodo iniziale di studio, sia per capire le possibilità e i limiti degli strumenti da dover utilizzare nella trasformazione delle FAQ in dati processabili, sia per apprenderne a pieno il funzionamento tramite la documentazione presente, \azienda{} ha ritenuto questo progetto idoneo ad uno studente universitario, il quale ha a disposizione circa 300 ore per formarsi su tutto ciò di cui vi è bisogno, e successivamente portare a termine il prodotto richiesto.
+Visto il bisogno di un periodo iniziale di studio, sia per capire le possibilità e i limiti degli strumenti da dover utilizzare nella trasformazione delle \gls{FAQ} in dati processabili, sia per apprenderne a pieno il funzionamento tramite la documentazione presente, \azienda{} ha ritenuto questo progetto idoneo ad uno studente universitario, il quale ha a disposizione circa 300 ore per formarsi su tutto ciò di cui vi è bisogno, e successivamente portare a termine il prodotto richiesto.
 \section{Principali problematiche}
-sdfgsdg
+Durante il periodo di stage, sono state incontrare diverse difficoltà, utili a migliorare la capacità di scelta e decisione dello stagista, ma anche la comunicazione e il lavoro all'interno di un team.
+
+\subsection{Difficoltà di ambientazione}
+Nei primi giorni in azienda l'ostacolo principale è stato l'inserimento in un team di lavoro affiatato e di esperienza, nonostante i suoi componenti siano stati molto disponibili e aperti a domande e chiarimenti. In particolare:
+\begin{itemize}
+	\item il \textbf{linguaggio tecnico/aziendale} non è stato da subito di facile apprendimento. In parte il problema sorgeva quando i brainstorming del team vertevano su tecnologie a me sconosciute, oppure su aspetti tecnici dei loro prodotti. Con il passare del tempo, attraverso l'utilizzo di un piccolo glossario individuale dove segnavo le spiegazioni dei termini a me non chiari, ho assimilato la maggior parte dei concetti, potendo così partecipare alle riunione del team in modo attivo e costruttivo;
+	\item lavorare all'interno di un team non è un'attività semplice. Bisogna imparare a rispettare le scadenze nel rispetto dei colleghi e saper elaborare strategie nel caso in cui essi non siano riusciti a rispettare le proprie. Grazie all'esperienza che ho maturato sotto questo punto di vista, ho capito quanto sia importante pianificare con cura le attività e il tempo da destinare ad ognuna di esse.
+\end{itemize}
+
+\subsection{Difficoltà lavorative}
+Durante lo svolgimento del mio progetto ho riscontrato queste difficoltà principali:
+\begin{itemize}
+	\item scelta del \textbf{miglior strumento per il \gls{NLP}}: il \gls{NLP} è un problema che è stato affrontato relativamente recentemente nel mondo dell'informatica. Le tecnologie che il mercato mette a disposizione sono limitate e spesso non soddisfacenti per gli obiettivi che mi sono stati richiesti. La ricerca di uno strumento idoneo non è stata facile, anche perchè l'azienda richiedeva non ci fossero costi per il suo utilizzo. Dopo una buona analisi del mercato, con la produzione di una relativa documentazione consegnata al tutor aziendale, è stato deciso di utilizzare Api.ai, servizio acquistato da Google nel ?????, che offre svariate funzionalità senza alcun costo, ma con delle sole limitazioni in termini di richieste giornaliere e mensili (una breve analisi dei principali strumenti di NLP è presente nella sezione???);
+	\item \textbf{possibili richieste degli utenti}: il mio compito era quello di fornire una risposta tramite i \gls{chatbot} alle possibile domande di un utilizzatore. Se in primo momento questo non sembrava un \emph{task} troppo complicato, si è però trasformato in un problema non di semplice gestione, in quanto il dominio di richieste di un utente può essere vasto e molto vario. Per cercare di superare questo ostacolo, in accordo con il tutor e il team aziendale, si è deciso di limitare le categorie di domande a cui il \gls{chatbot} risponde, fornendo un messaggio adeguato in caso di una richiesta dell'utente non gestita. Sarà poi compito dell'azienda ampliare le funzionalità dei \gls{chatbot}, visto il poco tempo a mia disposizione, valutando le richieste fatte dagli utenti nell'apposita sezione di Api.ai;
+	\item \textbf{gestione del sessionId}: nel JSON utilizzato per interrogare Api.ai tramite una richiesta PUSH, deve essere presente obbligatoriamente il campo sessionId, per identificare univocamente il mittente della richiesta. La gestione di questo campo è stata quindi di notevole importanza nel garantire ad ogni utente una corretta interazione con il \gls{chatbot}. Per assegnare ad ogni utente un sessionId univoco è stato deciso di creare un campo nella tabella degli utenti del database, dove memorizzare la stringa rappresentata dall'id dell'utente nel database e il timestamp del collegamento al bot, garantendo così l'unicità della stessa. In questo modo le domande fatte dall'utente al \gls{chatbot} saranno gestite come una conversazione, invece che una singola domanda senza una storia.
+\end{itemize}
+
+- imparare documentazione
+- collegamento db java
+- gestione sessionId
+- capire tutte possibile domande degli utenti
+- 
+
+
 \section{Strumenti utilizzati}
 \subsection{NetBeans}
 NetBeans è un ambiente di sviluppo integrato multi-linguaggio, nato nel giugno 2000 e scritto interamente in Java, scelto dalla Oracle Corporation come IDE ufficiale da contrapporre al più diffuso Eclipse.
-L'azienda non ha posto nessun vincolo sull'ambiente di sviluppo da adottare, così come vale per i propri dipendenti. Ho deciso di utilizzare NetBeans in quanto è molto intuitivo e di semplice utilizzo.
+L'azienda non ha posto nessun vincolo sull'ambiente di sviluppo da adottare, così come vale per i propri dipendenti. Ho deciso di utilizzare NetBeans in quanto è molto intuitivo e di semplice utilizzo.\\
+Inoltre offre una integrazione con \gls{Mercurial} per gestire \emph{push}, \emph{pull} e \emph{commit} senza utilizzare le righe di comando.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{../Immagini/netbeans.jpg}
@@ -42,8 +66,18 @@ L'azienda non ha posto nessun vincolo sull'ambiente di sviluppo da adottare, cos
 \end{figure}
 \subsection{Api.ai}
 Api.ai è una società nata nell'ottobre del 2010 e acquisita da Google Inc. nel 2016. Api.ai è una piattaforma di conversazione
-che permette interazioni sofisticate con il linguaggio naturale. All'interno del progetto è stata utilizzata per trasformare le domande degli utenti in dati processabili, dopo aver creato due agenti, uno per ciascun \gls{chatbot}, ed averli istruiti secondo le possibili FAQ dei rispettivi ambiti di utilizzo.
-\begin{figure}[!h]
+che permette interazioni sofisticate con il linguaggio naturale. All'interno del progetto è stata utilizzata per trasformare le domande degli utenti in dati processabili, dopo aver creato due agenti, uno per ciascun \gls{chatbot}, ed averli istruiti secondo le possibili \gls{FAQ} dei rispettivi ambiti di utilizzo.\\
+Api.ai poteva essere integrato nel software aziendale in due diversi modi:
+\begin{itemize}
+	\item connesso direttamente al \gls{chatbot} di Facebook Messenger, grazie alla semplice integrazione prevista da Api.ai, estraendo le informazioni dal database aziendale tramite dei \emph{webhook}, anch'essi facilmente gestibili tramite la piattaforma di Api.ai;
+	\item come strumento esterno al software aziendale, con il bisogno di interrogarlo tramite delle richieste POST HTTP solo in alcuni casi specifici, con le domande poste dall'utente.
+\end{itemize} 
+Dopo aver valutato entrambe le opzioni, ho scelto di intraprendere la seconda per due motivazioni:
+\begin{itemize}
+	\item utilizzando Api.ai come strumento esterno non è stato necessario introdurre dipendenze verso di esso nel codice, dando così la possibilità, se ci fosse bisogno in futuro, all'azienda di cambiare questa tecnologia con un'altra senza grossi problemi, cosa che sarebbe stata molto più difficile nell'altro caso;
+	\item Api.ai mette a disposizione un SDK per Java molto utile, anche se non ben documentato. In ogni caso dopo aver capito il suo funzionamento è stato molto semplice sfruttarlo per interrogare Api.ai con poche righe di codice. 
+\end{itemize}
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.2]{../Immagini/apiai.png}
 	\caption{Logo di api.ai}
@@ -51,16 +85,23 @@ che permette interazioni sofisticate con il linguaggio naturale. All'interno del
 \subsection{Hibernate}
 Hibernate è una piattaforma open-source ad alto rendimento per lo sviluppo di applicazioni Java, che fornisce il servizio Object-relation mapping (ORM), ovvero si occupa della mappatura tra le classi Java e le relative tabelle di un database SQL.
 Gestisce dunque il salvataggio degli oggetti di tali classi ed il reperimento dalle entità dal database, automatizzando le query necessarie e provvedendo alla reistanziazione dell’oggetto mappato sul database.
-\begin{figure}[!h]
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.35]{../Immagini/Hibernate.png}
 	\caption{Logo di Hibernate}
 \end{figure}
-\subsection{Apache Tomcat}
-\subsection{Spring}
-\subsection{Mercurial}
 
-\subsection{BitBucket}
+\subsection{Database MySQL} 
+L'azienda \azienda{} utilizza un database MySQL per la memorizzazione e gestione dei dati relativi ai progetti dei \gls{chatbot}.
+Lo stagista è stato incaricato di capirne la struttura e come esso veniva gestito all'interno dell'applicativo, per poi utilizzarlo al meglio nello sviluppo del proprio prodotto.\\
+
+
+
+Infine sono stati utilizzati alcuni degli strumenti consolidati nel contesto aziendale, come \emph{BitBucket} e \emph{Mercurial} per quanto riguarda il versionamento del codice, \emph{Slack} per le comunicazioni con gli altri dipendenti e il tutor ed \emph{Asana} per il tracciamento dei \emph{task} da svolgere (strumenti esposti nella sezione \ref{Teconologie}).
+
+
+
+
 \section{Prodotto ottenuto}
 
 dgsdg

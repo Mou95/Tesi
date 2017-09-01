@@ -8,16 +8,34 @@
 % Glossario
 %**************************************************************
 %\renewcommand{\glossaryname}{Glossario}
-
-\newglossaryentry{nlp}
+\newglossaryentry{API}
 {
-    name=\glslink{nlp}{NLP},
-    text=Natural Language Processing,
+    name=\glslink{API}{Application Program Interface},
+    text=API,
+    sort=api,
+    description={in informatica con il termine \emph{Application Programming
+Interface} API (ing. interfaccia di programmazione di un’applicazione) si
+indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate
+a formare un set di strumenti specifici per l’espletamento di un determinato
+compito all’interno di un certo programma. La finalità è ottenere un’astrazione,
+di solito tra l’hardware e il programmatore o tra software a basso e quello ad alto
+livello semplificando così il lavoro di programmazione}
+}
+
+\newglossaryentry{NLP}
+{
+    name=\glslink{NLP}{Natural Language Processing},
+    text=NLP,
     sort=nlp,
     description={in informatica con il termine \emph{Application Programming Interface API} (ing. interfaccia di programmazione di un'applicazione) si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
 }
 
-
+\newglossaryentry{FTP}
+{
+    name=\glslink{FTP}{File Transfer Protocol},
+    text=FTP,
+    description={in informatica il \emph{File Transfer Protocol} è un protocollo per la trasmissione di dati tra \emph{host} basato su \emph{TCP} e con architettura di tipo client-server. Il protocollo usa connessioni \emph{TCP} distinte per trasferire i dati e per controllare i trasferimenti e richiede autenticazione del client tramite nome utente e password}
+}
 
 \newglossaryentry{chatbot}
 {
@@ -28,7 +46,46 @@
 
 \newglossaryentry{FAQ}
 {
-    name=\glslink{faq}{FAQ},
-    text=Frequently Asked Question,
-    description={in informatica con il termine \emph{Chatbot} si indica un programma che simula una conversazione tra un robot e un essere umano. Questi programmi funzionano o come utenti stessi delle \emph{chat} o come persone che rispondono alle FAQ delle persone che accedono al sito}
+    name=\glslink{FAQ}{Frequently Asked Questions},
+    text=FAQ,
+    description={Le \emph{Frequently Asked Questions}, meglio conosciute con la sigla FAQ, sono letteralmente le "domande poste frequentemente"; più esattamente sono una serie di risposte stilate direttamente dall'autore, in risposta alle domande che gli vengono poste, o che ritiene gli verrebbero poste, più frequentemente dagli utilizzatori di un certo servizio: soprattutto su Internet e in particolare nel web e nelle comunità virtuali vi sono domande ricorrenti alle quali si preferisce rispondere pubblicamente con un documento affinché non vengano poste troppo spesso, in modo da sciogliere i dubbi dei nuovi utenti}
+}
+
+\newglossaryentry{ASD}
+{
+    name=\glslink{ASD}{Adaptive Software Development},
+    text=Adaptive Software Development,
+    description={\emph{L’Adaptive Software Development} (ASD) è una
+metodologia composta da un insieme di regole di sviluppo software inserite in un
+sistema complessivo detto \emph{Agile Project Management} i cui concetti base sono tre:
+\begin{itemize}
+	\item \emph{Leadership-Collaboration Management} - Uno stile di gestione misto fra gerarchico e collaborativo;
+	\item \emph{emphFrom Processes to Pattern} - Passaggio dall’idea di processo definito e
+misurabile a quella di processo non perfettamente definito, quasi un processo \emph{fuzzy};
+	\item \emph{Peering into the Future} - Osservazione del futuro per capire come l’idea che produrrà un affare di successo debba essere legata al momento in cui diventerà una forma di business.
+\end{itemize}}
+}
+
+\newglossaryentry{push}
+{
+    name=\glslink{push}{Notifica push},
+    text=push,
+    description={La notifica push è una tipologia di messaggistica istantanea con la quale il messaggio perviene al destinatario senza che questo debba effettuare un'operazione di scaricamento (modalità \emph{pull}). Tale modalità è quella tipicamente utilizzata da applicazioni come \emph{WhatsApp}, oppure servizi di sistemi operativi come \emph{Android}, o come numerose applicazioni derivate da siti web (ad esempio il classico servizio meteo o quello delle notizie).
+Per permettere alle notifiche push di giungere al destinatario è indispensabile che l'applicazione sia attiva, ovvero operi in \emph{background} e sia on-line. Successivamente, occorre che l'utente abbia autorizzato l'applicazione a inviare le notifiche}
+}
+
+\newglossaryentry{Mercurial}
+{
+    name=\glslink{Mercurial}{Mercurial},
+    text=Mercurial,
+    description={\emph{Mercurial} è un software multipiattaforma di controllo di versione distribuito creato da Matt Mackall e disponibile sotto \emph{GNU General Public License 2.0}.
+È quasi completamente scritto in \emph{Python}, ma include anche una implementazione \emph{diff} binaria scritta in C. Il programma ha un'interfaccia a riga di comando, ma incorpora anche un'elementare interfaccia web. 
+Tutti i comandi di \emph{Mercurial} sono invocati come opzioni del programma principale hg, un riferimento al simbolo chimico dell'elemento mercurio}
+}
+
+\newglossaryentry{SaaS}
+{
+    name=\glslink{SaaS}{Software as a service},
+    text=SaaS,
+    description={\emph{Software as a service} (SaaS) (Software come servizio in italiano) è un modello di distribuzione del \emph{software} applicativo dove un produttore di \emph{software} sviluppa, opera (direttamente o tramite terze parti) e gestisce un'applicazione web che mette a disposizione dei propri clienti via Internet previo abbonamento. Si tratta spesso, ma non sempre, di un servizio di \emph{cloud computing}}
 }
