@@ -3,9 +3,55 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Resoconto attività di stage}
-\label{cap:stage}
+\chapter{Analisi dei requisiti}
+\label{cap:analisi}
 
-\section{Analisi dei requisiti}
+\section{Analisi di mercato}
+Il primo passo da compiere per iniziare lo sviluppo de prodotto è stato scegliere la piattaforma di \gls{NLP} migliore per i requisiti imposti dall'azienda. Le richieste fatte da \azienda{} riguardanti questo strumento erano le seguenti:
+\begin{itemize}
+	\item \textbf{costo}: il prezzo per il suo utilizzo doveva essere uguale a 0;
+	\item \textbf{lingua}: deve supportare sia la lingua italiana, visto che al momento attuale i \gls{chatbot} sono implementati solo con quella;
+	\item \textbf{documentazione}: il servizio deve essere ben documentato per permettere all'azienda, una volta finito il periodo di stage, di imparare ad utilizzarlo velocemente.
+\end{itemize}
 
-\section{}
+Questa attività di analisi di mercato si è rivelata quindi fondamentale per la buona riuscita del progetto, visto l'importanza che questo strumento avrebbe avuto nell'intero periodo di sviluppo. Le piattaforme da me studiate e analizzate sono riportate di seguito.
+
+\subsubsection{IBM Watson Conversation}
+IBM Watson Conversation\footcite{watson} è un prodotto della piattaforma IBM Watson, che attraverso IBM Cloud dà la possibilità di integrare i più potenti mezzi di AI nelle tue applicazioni. Il servizio di Conversation, oltre alla possibilità di creare \gls{chatbot} e agenti virtuali, può essere istruito ed interrogato per analizzare il testo posto in input, attraverso le \gls{API} messe a disposizione.\\
+È possibile infatti creare dei workspace dedicati dove, attraverso \emph{intent} ed \emph{entities} creati e gestiti dallo sviluppatore, analizzare le domande poste dagli utenti, estraendo i dati che più interessano. L'integrazione con l'applicativo aziendale risultava semplice, grazie al SDK di Java\footcite{watsonSDK} messo a disposizione da IBM.
+
+Per quanto riguarda le richieste dell'azienda:
+\begin{itemize}
+	\item la \textbf{lingua italiana} è supportata, e non in versione beta;
+	\item la \textbf{documentazione} è chiara ed esaustiva, con dei video di esempio molto utili;
+	\item esiste un piano di \textbf{costi} gratis, chiamato \emph{Lite}, che però dà la possibilità di creare un numero limitato di \emph{workspace}, \emph{intent} ed \emph{entity}, risultando troppo vincolante per i futuri utilizzi aziendali. Le soluzioni a pagamento non sono state prese in considerazione in quanto non percorribili per l'azienda, almeno in un primo momento di utilizzo di questi servizi.
+\end{itemize}
+
+\subsubsection{wit.ai}
+wit.ai\footcite{witai} è una società nata nell'ottobre del 2013 e acquisita da Facebook Inc. nel 2015.
+L'obiettivo di wit.ai è quello di semplificare la creazione di applicazioni che prevedono interazioni testuali o vocali; per farlo viene messa a disposizione degli sviluppatori una piattaforma di linguaggio naturale aperta ed estensibile che ha la peculiarità di apprendere tramite ogni interazione eseguita.\\
+wit.ai mette a disposizione un SDK gratuito ed \emph{open source} per il riconoscimento del linguaggio
+naturale. Questa piattaforma è caratterizzata dall'utilizzo di \emph{context}, \emph{intent} ed \emph{entity} che sono
+dei costrutti messi a disposizione per tradurre le richieste vocali dell'utente in dati processabili. In particolare il \emph{context} si utilizza per monitorare lo stato della conversazione tra l'utente e wit.ai.
+
+Per quanto riguarda le richieste dell'azienda:
+\begin{itemize}
+	\item la \textbf{lingua italiana} è supportata;
+	\item la \textbf{documentazione} è chiara ed esaustiva;
+	\item l'utilizzo di wit.ai è completamente gratuito per progetti sia pubblici che privati.
+\end{itemize}
+
+Dal punto di vista tecnico l'unica mancanza di questo strumento, che ha influito nella decisione di non adottarlo, è la impossibilità di impostare delle \emph{required entity} all'interno degli \emph{intent}. Questo aspetto obbliga lo sviluppatore a introdurre dei controlli a livello di \emph{business logic}, che altrimenti non sarebbero necessari, come nel caso di altre piattaforme che saranno esposte successivamente.
+
+\subsubsection{Microsoft LUIS}
+Microsoft LUIS (Language Understanding Intelligent Service)\footcite{luis} è un prodotto di \emph{Microsoft Azure}, dedicato a comprendere le richieste di una persona tramite un \emph{language model} (entity/intent). \\
+Come nelle altre piattaforme lo sviluppatore può creare degli \emph{intents}, cioè delle categorie di azioni che l'utente può intraprendere, dove nelle frasi ad esse correlate vengono evidenziate le \emph{entities}, ossia i pezzi di informazione di interesse, per poi gestirle nella logica del \gls{chatbot}. LUIS inoltre mette a disposizione la possibilità di "marcare" le \emph{entity} come \emph{required}, al contrario di wit.ai, e anche la creazione di cosiddette \emph{composite entities}, che possono essere intese come il raggruppamento di più \emph{entity} in una unica.
+
+Per quanto riguarda le richieste dell'azienda:
+\begin{itemize}
+	\item la \textbf{lingua italiana} è supportata;
+	\item la \textbf{documentazione} è abbastanza chiara;
+	\item esiste un piano \textbf{gratuito} di utilizzo di LUIS, con una limitazione del numero di chiamate alle API.
+\end{itemize}
+
+\subsubsection{Amazon Lex}
