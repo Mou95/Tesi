@@ -6,6 +6,33 @@
 \chapter{Analisi dei requisiti}
 \label{cap:analisi}
 
+Il primo giorno di stage il tutor aziendale ha indetto una riunione con tutti i dipendenti per definire le funzionalità del prodotto che dovevo sviluppare. Attraverso questo \emph{brainstorming} ho potuto farmi un'idea più precisa del compito a me assegnato, iniziando così la mia prima attività, cioè l'analisi dei requisiti. In accordo con il tutor non ho dovuto stilare un documento formale che comprendesse i casi d'uso, ma solo una lista di requisiti funzionali che il prodotto avrebbe dovuto soddisfare.
+
+\section{Tracciamento dei requisiti}
+Nella tabella che seguono verranno presentati i principali requisiti individuati durante l’analisi del problema.
+Ogni requisito individuato avrà un codice identificativo univoco così formato: \\
+\centerline{R\{Importanza\}\{Codice\}} \\ 
+dove:
+\begin{itemize}
+	\item \textbf{importanza} può assumere uno dei seguenti valori:
+	\begin{itemize}
+		\item \textbf{O}: indica un requisito obbligatorio;
+		\item \textbf{D}: indica un requisito desiderabile;
+	\end{itemize}
+	\item \textbf{codice} indica il codice identificativo del requisito, è univoco e deve essere
+identificato in forma gerarchica.
+\end{itemize}
+
+\normalsize
+\begin{longtable}{|c|>{\centering}m{7cm}|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Importanza}\\
+\hline
+\endhead
+RFO1 & Il sistema deve permettere all'utente di autenticarsi come amministratore o riconoscerlo come ospite dell'azienda. & Obbligatorio\\ 
+\hline
+\end{longtable}
+
 \section{Analisi di mercato}
 Il primo passo da compiere per iniziare lo sviluppo de prodotto è stato scegliere la piattaforma di \gls{NLP} migliore in base ai requisiti imposti dall'azienda. Le richieste fatte da \azienda{} riguardanti questo strumento erano le seguenti:
 \begin{itemize}
