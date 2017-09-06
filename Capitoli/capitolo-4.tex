@@ -3,3 +3,23 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
+\chapter{Progettazione}
+\label{cap:progettazione}
+
+La progettazione nel caso del prodotto che dovevo sviluppare si è concentrata particolarmente sulla piattaforma di api.ai, in quanto rappresentava la maggior parte del lavoro. Successivamente sono passato alla progettazione delle classi da introdurre nel codice già creato dall'azienda, per gestire le mie nuove funzionalità del \gls{chatbot}.
+
+\section{Studio di api.ai}
+Prima di passare all'attività di progettazione è stato fondamentale analizzare e studiare a fondo le possibilità che api.ai mette a disposizione per la creazione del prodotto a me richiesto. I concetti base per capire il funzionamento di api.ai sono quattro:
+\begin{itemize}
+	\item \textbf{agent}: gli \emph{agents} sono meglio descritti come moduli NLU (Natural Language Understanding). Questi possono essere inclusi nell'applicazione, nel prodotto o nel servizio e trasformano le richieste di utenti naturali in dati attivi. Questa trasformazione si verifica quando un input utente corrisponde a uno degli \emph{intent} all'interno dell'\emph{agent};
+	\item \textbf{intent}: sono una mappatura tra quello che l'utente può scrivere in input e l'azione che il software deve intraprendere. Un intent è formato dalle seguenti sezioni:
+	\begin{itemize}
+		\item\textbf{ \emph{user says}}: perché l'\emph{agent} capisca la domanda, sono necessari esempi di come la stessa domanda può essere posta in modi diversi. Lo sviluppatore aggiunge queste permutazioni alla sezione \emph{user says} dell'\emph{intent}. Più variazioni vengono aggiunte all'\emph{intent}, meglio l'\emph{agent} comprenderà l'utente;
+		\item \textbf{\emph{action}}: contiene il nome della action, che può essere utilizzato per attivare una particolare funzione del prodotto, e la tabella dei \textbf{\emph{parameters}}. I parameters possono gli elementi che collegano le parole nelle \emph{user says} alle \emph{entities};
+		\item \textbf{\emph{response}}: in questa sezione è possibile definire la risposta di api.ai quando l'intent viene attivato. Non è stato quasi mai utilizzato, in quanto la risposta all'utente veniva generata nella business logic.
+	\end{itemize}
+	\item \textbf{context}: i \emph{context} rappresentano il contesto corrente della richiesta di un utente. Ciò è utile per differenziare frasi che possono essere vaghe o avere significati diversi a seconda delle preferenze dell'utente, della posizione geografica, della pagina corrente di un'applicazione o dell'argomento della conversazione. È possibile impostare un \emph{lifespan} ad ognuno di essi per definire dopo quante richieste il \emph{context} deve scadere;
+	\item \textbf{entity}: le entities sono strumenti potenti utilizzati per estrarre i valori dei parametri dagli input degli utenti. Tutti i dati importanti che si desidera ottenere dalla richiesta di un utente, avranno un'entità corrispondente. Le \emph{system entities} sono entità pre-costruite fornite da API.AI per facilitare la gestione dei più comuni concetti (luoghi, orari, colori, ecc..). È possibile poi definire le proprie \emph{entities} in base alle necessità dello sviluppatore;
+\end{itemize}
+
+\section{Progettazione agents api.ai}
