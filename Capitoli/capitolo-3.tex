@@ -23,14 +23,87 @@ dove:
 identificato in forma gerarchica.
 \end{itemize}
 
+La prima tabella contiene i requisiti comuni ai due \gls{chatbot} oggetti dello stage, la seconda tabella riporta i requisiti specifici del \gls{chatbot} per la gestione degli eventi, mentre la terza quelli di Meteo Veneto bot.
+
 \normalsize
 \begin{longtable}{|c|>{\centering}m{7cm}|c|}
 \hline
 \textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Importanza}\\
 \hline
 \endhead
-RFO1 & Il sistema deve permettere all'utente di autenticarsi come amministratore o riconoscerlo come ospite dell'azienda. & Obbligatorio\\ 
+RO1 & L'utente deve poter interagire con il sistema attraverso delle domande di senso compiuto & Obbligatorio\\ 
+RO2 & Il sistema deve permettere all'utente di interagire con esso nel modo più naturale possibile & Obbligatorio \\
+RD3 & Il sistema deve rispondere all'utente sfruttando i modelli messi a disposizione da Facebook Messenger & Desiderabile\\
 \hline
+\caption{Requisiti funzionali generali}
+\end{longtable}
+
+\normalsize
+\begin{longtable}{|c|>{\centering}m{7cm}|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Importanza}\\
+\hline
+\endhead
+RO1.1 & L'utente deve poter chiedere informazioni riguardo una conferenza & Obbligatorio\\ 
+RO1.1.1 & L'utente deve poter chiedere l'orario di inizio e fine di una conferenza & Obbligatorio\\ 
+RO1.1.2 & L'utente deve poter chiedere la durata di una conferenza & Obbligatorio\\
+RO1.1.3 & L'utente deve poter chiedere in che aula si svolge la conferenza & Obbligatorio\\  
+RO1.2 & L'utente deve poter chiedere informazioni riguardo le aule dell'evento & Obbligatorio\\ 
+RO1.2.1 & L'utente deve poter chiedere delle indicazioni per raggiungere un'aula & Obbligatorio\\ 
+RO1.3 & L'utente deve poter chiedere informazioni riguardo il programma dell'evento & Obbligatorio\\ 
+RO1.3.1 & L'utente deve poter chiedere informazioni riguardo il programma dell'evento in una specifica giornata & Obbligatorio\\ 
+RO1.3.3 & L'utente deve poter chiedere informazioni riguardo il programma dell'evento in una specifica giornata ed in una precisa stanza & Obbligatorio\\
+RO1.3.4 & L'utente deve poter chiedere informazioni riguardo il programma dell'evento in una specifica ora ed in una precisa stanza & Obbligatorio\\
+RO1.3.5 & L'utente deve poter chiedere informazioni riguardo il programma dell'evento specificando il giorno, l'ora e l'aula & Obbligatorio\\
+RO4 & L'utente deve poter ricevere informazioni sul funzionamento del chatbot scrivendo "aiuto" & Obbligatorio\\ 
+RO5 & L'utente deve poter visualizzare la propria agenda scrivendo "agenda" & Obbligatorio\\ 
+\hline
+\caption{Requisiti funzionali del chatbot per la gestione degli eventi}
+\end{longtable}
+
+\normalsize
+\begin{longtable}{|c|>{\centering}m{7cm}|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Importanza}\\
+\hline
+\endhead
+RO1.4 & L'utente deve poter chiedere le previsioni del meteo & Obbligatorio\\ 
+RO1.4.1 & L'utente deve poter chiedere le previsioni del meteo in un determinato comune del veneto & Obbligatorio\\
+RO1.4.2 & L'utente deve poter chiedere le previsioni del meteo per un determinato giorno o periodo di tempo(es. weekend) & Obbligatorio\\  
+RO1.4.3 & L'utente deve poter chiedere le previsioni del meteo per un determinato giorno o periodo di tempo(es. wweekend), in un preciso comune del Veneto & Obbligatorio\\ 
+RO1.5 & L'utente deve poter chiedere le temperature previste & Obbligatorio\\ 
+RO1.5.1 & L'utente deve poter chiedere le temperature previste in un determinato giorno o periodo di tempo & Obbligatorio\\
+RO1.5.2 & L'utente deve poter chiedere le temperature previste in un determinato comune del Veneto & Obbligatorio\\  
+RO1.5.3 & L'utente deve poter chiedere le temperature previste in un determinato comune del Veneto, per uno specifico giorno o periodo di tempo & Obbligatorio\\ 
+RO1.6 & L'utente deve poter chiedere se è previsto il sole & Obbligatorio\\ 
+RO1.6.1 & L'utente deve poter chiedere se è previsto il sole in un determinato giorno o periodo di tempo & Obbligatorio\\
+RO1.6.2 & L'utente deve poter chiedere le se è previsto il sole in un determinato comune del Veneto & Obbligatorio\\  
+RO1.6.3 & L'utente deve poter chiedere se è previsto il sole in un determinato comune del Veneto, per uno specifico giorno o periodo di tempo & Obbligatorio\\  
+RO1.7 & L'utente deve poter chiedere se è prevista pioggia & Obbligatorio\\ 
+RO1.7.1 & L'utente deve poter chiedere se è prevista pioggia in un determinato giorno o periodo di tempo & Obbligatorio\\
+RO1.7.2 & L'utente deve poter chiedere le se è prevista pioggia in un determinato comune del Veneto & Obbligatorio\\  
+RO1.7.3 & L'utente deve poter chiedere se è prevista pioggia in un determinato comune del Veneto, per uno specifico giorno o periodo di tempo & Obbligatorio\\ 
+RO1.8 & L'utente deve poter chiedere se è prevista neve & Obbligatorio\\ 
+RO1.8.1 & L'utente deve poter chiedere se è prevista neve in un determinato giorno o periodo di tempo & Obbligatorio\\
+RO1.8.2 & L'utente deve poter chiedere le se è prevista neve in un determinato comune del Veneto & Obbligatorio\\  
+RO1.8.3 & L'utente deve poter chiedere se è prevista neve in un determinato comune del Veneto, per uno specifico giorno o periodo di tempo & Obbligatorio\\ 
+RD1.9 & L'utente deve poter chiedere se è previsto bel tempo & Obbligatorio\\ 
+RD1.9.1 & L'utente deve poter chiedere se è previsto bel tempo in un determinato giorno o periodo di tempo & Desiderabile\\
+RD1.9.2 & L'utente deve poter chiedere le se è previsto bel tempo in un determinato comune del Veneto & Obbligatorio\\  
+RD1.9.3 & L'utente deve poter chiedere se è previsto brutto tempo in un determinato comune del Veneto, per uno specifico giorno o periodo di tempo & Obbligatorio\\ 
+RD1.10 & L'utente deve poter chiedere se è previsto brutto tempo & Obbligatorio\\ 
+RD1.10.1 & L'utente deve poter chiedere se è previsto brutto tempo in un determinato giorno o periodo di tempo & Desiderabile\\
+RD1.10.2 & L'utente deve poter chiedere le se è previsto brutto tempo in un determinato comune del Veneto & Obbligatorio\\  
+RO1.10.3 & L'utente deve poter chiedere se è previsto brutto tempo in un determinato comune del Veneto, per uno specifico giorno o periodo di tempo & Obbligatorio\\ 
+RO1.11 & L'utente deve poter chiedere se è prevista nebbia tempo & Obbligatorio\\ 
+RO1.11.1 & L'utente deve poter chiedere se è prevista nebbia tempo in un determinato giorno o periodo di tempo & Desiderabile\\
+RO1.11.2 & L'utente deve poter chiedere le se è prevista nebbia tempo in un determinato comune del Veneto & Obbligatorio\\  
+RD1.11.3 & L'utente deve poter chiedere se è prevista nebbia tempo in un determinato comune del Veneto, per uno specifico giorno o periodo di tempo & Obbligatorio\\ 
+RO1.12 & L'utente deve poter chiedere se sono presenti fenomeni particolari o avvisi speciali & Obbligatorio\\ 
+RO7 & Il sistema deve fornire le informazioni del comune in cui l'utente si è registrato, nel caso non ne specifichi un altro nella domanda & Obbligatorio\\
+RO8 & L'utente deve poter riceve l'audio del bollettino meteo scrivendo "ascolta bollettino" & Obbligatorio\\ 
+\hline
+\caption{Requisiti funzionali del chatbot Meteo Veneto Bot}
 \end{longtable}
 
 \section{Analisi di mercato}
