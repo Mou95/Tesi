@@ -35,16 +35,61 @@ Per quanto riguarda la progettazione del \gls{chatbot} dedicato alla gestione di
 		\includegraphics[scale=0.12]{../Immagini/meteo_scelta.png}
 		\caption{dfsf}
 	\end{figure}
-	\item \textbf{luogo\_conferenza}: permette all'utente di domandare il luogo dove si svolgerà la conferenza e viene attivato con domande come: \emph{"Dove si svolge la conferenza Y?"}. La risposta del \gls{chatbot} contiene un carosello predefinito da Messenger, con tutte le informazioni sull'aula in questione;
-	\item \textbf{ora\_conferenza}: permette all'utente di l'orario di inizio e di fine di una conferenza e viene attivato con domande come: \emph{"A che ore inizia la conferenza Y?"}. La risposta del \gls{chatbot} contiene un carosello predefinito da Messenger, con tutte le informazioni sulla conferenza;
-	\item \textbf{indicazioni\_stanza}: permette all'utente di domandare le indicazioni per trovare una determinata aula e viene attivato con domande come: \emph{"Dammi delle indicazioni per la stanza X"}. La risposta del \gls{chatbot} contiene le indicazioni presenti nel database, con una piccola mappa illustrativa;
-	\item \textbf{programma\_giornata}: permette all'utente di domandare il il programma dell'evento di un determinato giorno e viene attivato con domande come: \emph{"Qual è il programma di oggi?"}. La risposta del \gls{chatbot} contiene un carosello per ogni conferenza in programma quel giorno;
-	\item \textbf{programma\_no\_data}:
-	\item \textbf{data\_ora\_stanza\_conferenza}:
-	\item \textbf{data\_stanza\_conferenza}:
-	\item \textbf{ora\_stanza\_conferenza}:
-	\item \textbf{visualizza\_agenda}:
-	\item \textbf{richiesta\_aiuto}:
+	\item \textbf{luogo\_conferenza}: permette all'utente di domandare il luogo dove si svolgerà la conferenza. La risposta del \gls{chatbot} contiene un carosello predefinito da Messenger, con tutte le informazioni sull'aula in questione;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}		
+	\item \textbf{ora\_conferenza}: permette all'utente di chiedere l'orario di inizio e di fine di una conferenza. La risposta del \gls{chatbot} contiene un carosello predefinito da Messenger, con tutte le informazioni sulla conferenza;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}		
+	\item \textbf{indicazioni\_stanza}: permette all'utente di domandare le indicazioni per trovare una determinata aula. La risposta del \gls{chatbot} contiene le indicazioni presenti nel database, con una piccola mappa illustrativa;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}			
+	\item \textbf{programma\_giornata}: permette all'utente di domandare il programma dell'evento di un determinato giorno. La risposta del \gls{chatbot} contiene un carosello per ogni conferenza in programma quel giorno;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}			
+	\item \textbf{programma\_no\_data}: permette all'utente di domandare quale conferenza si sta svolgendo in quel momento in una determinata stanza. La risposta del \gls{chatbot} contiene un carosello con la conferenza in programma;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}			
+	\item \textbf{data\_ora\_stanza\_conferenza}: permette all'utente di domandare la conferenza in programma specificando data, ora e aula. La risposta del \gls{chatbot} contiene un carosello con la conferenza in programma, se presente;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}			
+	\item \textbf{data\_stanza\_conferenza}: permette all'utente di domandare la conferenza in programma specificando data e aula. La risposta del \gls{chatbot} contiene un carosello con la conferenza in programma, se presente;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}			
+	\item \textbf{ora\_stanza\_conferenza}: permette all'utente di domandare la conferenza in programma specificando ora e aula. La risposta del \gls{chatbot} contiene un carosello con la conferenza in programma, se presente;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}		
+	\item \textbf{visualizza\_agenda}: permette all'utente di visualizzare la propria agenda (cioè le conferenze che ha aggiunto precedentemente). La risposta contiene tutte le conferenze aggiunte all'agenda;
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}			
+	\item \textbf{richiesta\_aiuto}: permette all'utente di ottenere delle informazioni per l'utilizzo del \gls{chatbot}. La risposta contiene una breve spiegazione e delle domande che possono essere rivolte al bot.
 \end{itemize}
 
 \subsection{Dati ARPA Veneto}
@@ -55,7 +100,7 @@ Il \gls{chatbot} dedicato al meteo è stato realizzato grazie agli \emph{open da
 	\item \textbf{alle 16:00}: un aggiornamento del bollettino emesso alle 13.
 \end{itemize} 
 
-Il file XML che è possibile scaricare, contiene queste informazioni:
+Il file \gls{XML} che è possibile scaricare, contiene queste informazioni:
 \begin{itemize}
 	\item le previsioni dei cinque giorni successivi per le 18 zone in cui è stata divisa la regione del Veneto;
 	\item una descrizione dell'evoluzione generale dei cinque giorni successivi, per tre macro zone: la regione intera, la zona delle Dolomiti e la pianura veneta.
@@ -134,7 +179,7 @@ Gli intents che ho deciso di creare per soddisfare tutti i requisiti sono i segu
 
 
 \section{Jaro Winkler distance}
-Durante l'attività di progettazione mi sono reso conto come fosse necessario gestire un possibile errore di scrittura dell'utente in una delle sue domande, soprattutto nelle parole fondamentali per formulare le risposte, come ad esempio il nome di un comune per il \gls{chatbot} del meteo o il nome di una conferenza in quello degli eventi. In un primo momento infatti l'input dell'utente veniva utilizzato direttamente nelle \emph{query SQL} per interrogare il database ed ottenere i dati di interesse, soprattutto attraverso l'operatore \emph{"LIKE"}. In questo modo però non è possibile gestire il caso in cui un utente scriva ad esempio il comune "Padvoa", intendendo Padova. \\
+Durante l'attività di progettazione mi sono reso conto come fosse necessario gestire un possibile errore di scrittura dell'utente in una delle sue domande, soprattutto nelle parole fondamentali per formulare le risposte, come ad esempio il nome di un comune per il \gls{chatbot} del meteo o il nome di una conferenza in quello degli eventi. In un primo momento infatti l'input dell'utente veniva utilizzato direttamente nelle \emph{query} \gls{SQL} per interrogare il database ed ottenere i dati di interesse, soprattutto attraverso l'operatore \emph{"LIKE"}. In questo modo però non è possibile gestire il caso in cui un utente scriva ad esempio il comune "Padvoa", intendendo Padova. \\
 Per ovviare a questo problema quindi è stato deciso di introdurre, dopo uno studio delle possibili soluzioni, la Jaro Winkler distance\footcite{jaro}, ossia una metrica che misura la "distanza" tra due stringhe per capire quanto esse siano simili tra loro. Grazie a questa accortezza, nel caso di errore di scrittura, il \gls{chatbot} è in grado di:
 \begin{itemize}
 	\item fornire una serie di opzioni di cosa secondo lui l'utente voleva scrivere, dando la possibilità ad esso di selezionare quella giusta;
