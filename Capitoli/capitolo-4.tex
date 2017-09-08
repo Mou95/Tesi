@@ -27,25 +27,110 @@ Prima di passare all'attività di progettazione è stato fondamentale analizzare
 Durante la progettazione degli \emph{agents} per api.ai è stato necessario definire tutti gli \emph{intents} utili a soddisfare i requisiti definiti durante l'analisi dei requisiti. Il passo successivo è stato quello di progettare le \emph{user says} per ogni \emph{intent} e le relative \emph{entity}.
 
 \subsubsection{Gestore di eventi}
-Per quanto riguarda la progettazione del \gls{chatbot} dedicato alla gestione di eventi, sono stati definiti le seguenti categorie di \emph{intents} (uno per ogni possibile domanda di natura diversa):
+Per quanto riguarda la progettazione del \gls{chatbot} dedicato alla gestione di eventi, gli \emph{intents} che mi sono serviti per soddisfare tutti i requisiti sono stati i seguenti:
 \begin{itemize}
-	\item \textbf{durata delle conferenze}: questo intent servirà per fornire all'utente la durata della conferenza da lui richiesta;
-	\item \textbf{orario delle conferenze}: questo intent servirà per fornire all'utente l'orario di inizio e fine delle conferenze;
-	\item \textbf{orario delle conferenze}: 
+	\item \textbf{durata\_conferenza}: permette all'utente di domandare la durata di una conferenza e viene attivato con domande come: \emph{"Quanto dura la conferenza Y?"}. La risposta del \gls{chatbot} contiene il nome, l'inizio, la fine e la durata (in minuti o in ore) della conferenza richiesta dall'ospite;
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/meteo_scelta.png}
+		\caption{dfsf}
+	\end{figure}
+	\item \textbf{luogo\_conferenza}: permette all'utente di domandare il luogo dove si svolgerà la conferenza e viene attivato con domande come: \emph{"Dove si svolge la conferenza Y?"}. La risposta del \gls{chatbot} contiene un carosello predefinito da Messenger, con tutte le informazioni sull'aula in questione;
+	\item \textbf{ora\_conferenza}: permette all'utente di l'orario di inizio e di fine di una conferenza e viene attivato con domande come: \emph{"A che ore inizia la conferenza Y?"}. La risposta del \gls{chatbot} contiene un carosello predefinito da Messenger, con tutte le informazioni sulla conferenza;
+	\item \textbf{indicazioni\_stanza}: permette all'utente di domandare le indicazioni per trovare una determinata aula e viene attivato con domande come: \emph{"Dammi delle indicazioni per la stanza X"}. La risposta del \gls{chatbot} contiene le indicazioni presenti nel database, con una piccola mappa illustrativa;
+	\item \textbf{programma\_giornata}: permette all'utente di domandare il il programma dell'evento di un determinato giorno e viene attivato con domande come: \emph{"Qual è il programma di oggi?"}. La risposta del \gls{chatbot} contiene un carosello per ogni conferenza in programma quel giorno;
+	\item \textbf{programma\_no\_data}:
+	\item \textbf{data\_ora\_stanza\_conferenza}:
+	\item \textbf{data\_stanza\_conferenza}:
+	\item \textbf{ora\_stanza\_conferenza}:
+	\item \textbf{visualizza\_agenda}:
+	\item \textbf{richiesta\_aiuto}:
 \end{itemize}
 
-\begin{center}
-\begin{longtable}{|c|>{\centering}m{7cm}|c|}
-\hline
-\textbf{Nome} & \textbf{Entities principali} & \textbf{Domande possibili}\\
-\hline
-\endhead
-Durata conferenza &  Nome della conferenza & \emph{"Quanto dura la conferenza X?"}\\ \hline
-\caption[Requisiti Funzionali]{Requisiti Funzionali}
-\label{tabella:req0}
-\end{longtable}
-\end{center}
+\subsection{Dati ARPA Veneto}
+Il \gls{chatbot} dedicato al meteo è stato realizzato grazie agli \emph{open data} messi a disposizione dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto(ARPAV). Ogni giorno, nel sito ufficiale\footcite{arpav}, vengono emessi tre bollettini:
+\begin{itemize}
+	\item \textbf{alle 9:00}: che rappresenta un aggiornamento del bollettino del giorno precedente;
+	\item \textbf{alle 13:00}: il nuovo bollettino;
+	\item \textbf{alle 16:00}: un aggiornamento del bollettino emesso alle 13.
+\end{itemize} 
 
+Il file XML che è possibile scaricare, contiene queste informazioni:
+\begin{itemize}
+	\item le previsioni dei cinque giorni successivi per le 18 zone in cui è stata divisa la regione del Veneto;
+	\item una descrizione dell'evoluzione generale dei cinque giorni successivi, per tre macro zone: la regione intera, la zona delle Dolomiti e la pianura veneta.
+\end{itemize}
+
+Ad ogni nuova emissione del bollettino, i nuovi dati vengono inseriti nel database aziendale, in modo da comunicare agli utenti solamente le notizie più aggiornate.
+
+\subsubsection{Meteo Veneto Bot}
+
+Gli intents che ho deciso di creare per soddisfare tutti i requisiti sono i seguenti:
+\begin{itemize}
+	\item \textbf{richiesta\_meteo}: permette all'utente di chiedere le previsioni del meteo specificando una giornata o un periodo di tempo (es. weekend) e il comune di interesse (se non viene specificato, si considera il comune da lui selezionato all'inizio dell'interazione con il \gls{chatbot}). La risposta contiene un carosello con il meteo richiesto.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_meteo.png}
+		\caption{Esempio di }
+	\end{figure}	
+	\item \textbf{richiesta\_sole}: permette all'utente di chiedere se è previsto il sole in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto il sole, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
+		\caption{Esempio di }
+	\end{figure}	
+	\item \textbf{richiesta\_pioggia}: permette all'utente di chiedere se è prevista pioggia in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista pioggia, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_pioggia.png}% "%" necessario
+		\qquad\qquad
+		\includegraphics[scale=0.12]{../Immagini/richiesta_pioggia2.png}
+		\caption{Didascalia comune alle due figure}
+	\end{figure}
+	\item \textbf{richiesta\_nebbia}: permette all'utente di chiedere se è prevista nebbia in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista nebbia, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_nebbia.png}
+		\caption{Esempio di }
+	\end{figure}
+	\item \textbf{richiesta\_neve}: permette all'utente di chiedere se è prevista neve in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista neve, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_nebbia.png}
+		\caption{Esempio di }
+	\end{figure}
+	\item \textbf{richiesta\_bel\_tempo}: permette all'utente di chiedere se è previsto bel tempo in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto bel tempo, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_bel_tempo.png}
+		\caption{Esempio di }
+	\end{figure}
+	\item \textbf{richiesta\_brutto\_tempo}: permette all'utente di chiedere se è previsto brutto tempo in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto brutto tempo, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_brutto_tempo.png}
+		\caption{Esempio di }
+	\end{figure}
+	\item \textbf{richiesta\_temperature}: permette all'utente di chiedere le temperature previste in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta contiene le temperature massimi e minime previste fornite da ARPA Veneto.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/richiesta_brutto_tempo.png}
+		\caption{Esempio di }
+	\end{figure}
+	\item \textbf{ascolta\_bollettino}: permette all'utente di chiedere il bollettino audio emesso da ARPA Veneto ogni giorno. La risposta contiene il file audio richiesto.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/bollettino.png}
+		\caption{Esempio di }
+	\end{figure}
+	\item \textbf{fenomeni\_particolari}: permette all'utente di chiedere se sono presenti avvisi o fenomeni particolari emessi da ARPAV. La risposta contiene questi avvisi, se presenti.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.12]{../Immagini/bollettino.png}
+		\caption{Esempio di }
+	\end{figure}
+
+\end{itemize}
 
 
 \section{Jaro Winkler distance}
