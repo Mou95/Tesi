@@ -6,18 +6,20 @@
 \chapter{Progetto di stage}
 \label{cap:progetto-stage}
 
-L'azienda \azienda{} ha da sempre mostrato interesse nell'inserimento all'interno del contesto aziendale di stagisti, studenti o altre figure professionali, anche per limitati periodi di tempo. Questa particolare propensione permette all'azienda sia di promuovere nuovi progetti o attività, che con il personale a disposizione non sarebbero percorribili per questioni di tempo, sia introdurre idee e tecnologie innovative per futuri prodotti o per quelli già sviluppati ed utilizzati da \azienda{}.\\ 
+L'azienda \azienda{} ha da sempre mostrato interesse nell'inserimento all'interno del contesto aziendale di stagisti, studenti o altre figure professionali, anche per limitati periodi di tempo. Questa particolare propensione permette all'azienda sia di promuovere nuovi progetti o attività, che con il personale a disposizione non sarebbero percorribili per questioni di tempo, sia introdurre idee e tecnologie innovative per futuri prodotti o per quelli già sviluppati ed utilizzati.
 
 \section{Chatbot}
 Un \gls{chatbot} (o chat bot) è un software che dialoga con te. Un assistente virtuale capace di risponderti su una serie di argomenti. Il nome è composto da due parole: chat, dall’inglese \emph{to chat}, che significa chiacchierare, e bot. Da questo si capisce che un \gls{chatbot} è quindi una chat in cui il nostro interlocutore non è un essere umano come noi ma un robot virtuale con il quale possiamo chiacchierare, parlare, o al quale possiamo porre una serie di domande.
 
-Il funzionamento per chi usa questi assistenti personali è molto semplice. La domanda può essere scritta ma può anche pronunciata, nel caso di \gls{chatbot} che comprendono il linguaggio umano. Queste forme di intelligenza artificiale sono ancora in via di perfezionamento, anche se già adesso alcuni \gls{chatbot} possono risultare utili, anche solo per capire quali potranno essere gli sviluppi nei prossimi anni.\\
+Il funzionamento per chi usa questi assistenti personali è molto semplice. La domanda può essere scritta ma può anche pronunciata, nel caso di \gls{chatbot} che comprendono il linguaggio umano. Queste forme di intelligenza artificiale sono ancora in via di perfezionamento, anche se già adesso alcuni \gls{chatbot} possono risultare utili, anche solo per capire quali potranno essere gli sviluppi nei prossimi anni.\\ \\
 Nel caso di Facebook Messenger, i bot assumono il ruolo di intermediari tra una azienda ed un cliente finale, fungendo da supporto automatizzato per le informazioni su prodotti o nella ricerca dei contenuti. I \gls{chatbot} rappresentano dunque un’evoluzione delle relazioni online, perché in grado di fornire autonomamente link e notizie di interesse, supportare l’utente nell’ordine o nella prenotazione, indicare il prodotto più adatto alle singole esigenze o semplicemente rispondere a richieste di informazioni e chiarimenti. 
 Un \gls{chatbot} deve essere associato ad una pagina. Una volta installato, sarà in grado di intercettare ogni singolo messaggio che un utente invia in privato alla pagina Facebook, rispondendo nell’immediato in base alle impostazioni predefinite ed evolvendosi interazione dopo interazione.
 
 \section{Descrizione del progetto}
-Negli ultimi anni \azienda{} si è interessata allo creazione e sviluppo di \gls{chatbot} per Facebook Messenger, dando la possibilità ai clienti di richiederne lo sviluppo di nuovi secondo le proprie specifiche, oppure di creare il proprio \gls{chatbot} autonomamente, senza alcuna conoscenza tecnica, attraverso dei template ottimizzati per i più comuni modelli di business. Questa nuova tecnologia è in rapida diffusione in svariati ambiti grazie alla sua facilità di sviluppo, esistono infatti molti tool che permettono di costruire il proprio \gls{chatbot} in pochi semplici passi.\\
-Il progetto di stage si inserisce in questo ambito, in quanto l'azienda desiderava introdurre la possibilità per gli utenti di scrivere delle vere e proprie domande al \gls{chatbot}, senza dover utilizzare il menù o i pulsanti dei vari modelli che la piattaforma mette a disposizione.
+Negli ultimi anni \azienda{} si è interessata allo creazione e sviluppo di \gls{chatbot} per Facebook Messenger, aggiungendo così un ulteriore servizio alla piattaforma di SMSHosting: botbuilder\footcite{botbuilder}. Questo strumento dà la possibilità ai clienti di creare il proprio \gls{chatbot} autonomamente, senza alcuna conoscenza tecnica, attraverso dei template ottimizzati per i più comuni modelli di business. \azienda{} mette anche a disposizione la possibilità di sviluppare \gls{chatbot} personalizzati in base alle specifiche dei clienti. 
+
+Questa nuova tecnologia è in rapida diffusione in svariati ambiti grazie alla sua facilità di sviluppo, esistono infatti molti \emph{tool} che permettono di costruire il proprio \gls{chatbot} in pochi semplici passi.\\
+Il progetto di stage si inserisce in questo mondo, in quanto l'azienda desiderava introdurre la possibilità per gli utenti di scrivere delle vere e proprie domande al \gls{chatbot}, senza dover utilizzare il menù o i pulsanti dei vari modelli che la piattaforma mette a disposizione.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.2]{../Immagini/modello_lista.png}
@@ -27,7 +29,7 @@ Il progetto di stage si inserisce in questo ambito, in quanto l'azienda desidera
 Il compito assegnato allo stagista è stato quello di integrare questo meccanismo in due diversi \gls{chatbot} creati dall'azienda:
 \begin{itemize}
 	\item \textbf{gestore eventi}: è un applicativo creato da \azienda{} per essere utilizzato durante lo svolgimento di eventi della durata di uno o più giornate. Attraverso questo \gls{chatbot} l'utente può recuperare delle informazione riguardanti le conferenze in programma, le aule disponibili e le giornate dell'evento;
-	\item \textbf{meteo Veneto bot}\footcite{meteo} questo \gls{chatbot} utilizza i dati di ARPA Veneto\footcite{arpav} per mostrare le previsioni del tempo del Veneto;
+	\item \textbf{meteo Veneto bot}\footcite{meteo}: questo \gls{chatbot} utilizza i dati di ARPA Veneto\footcite{arpav} per mostrare le previsioni del tempo del Veneto;
 \end{itemize}
 Il progetto si divideva quindi in tre parti:
 \begin{itemize}
@@ -44,7 +46,7 @@ L'orario lavorativo è stato il seguente: da lunedì a venerdì, dalle 8:00 alle
 
 \section{Obiettivi dello stage}
 \label{obiettivi}
-Prima di iniziare il periodo di stage, sono stati discussi insieme al tutor aziendale i requisiti che il prodotto finale doveva soddisfare. Questi obiettivi sono stati raccolti in due categorie: obbligatori e desiderabili, a seconda dell'importanza della loro implementazione.
+Prima di iniziare il periodo di stage, sono stati delineati i seguenti obiettivi, divisi in base alla loro importanza: obbligatori o desiderabili.
 
 \subsection{Obiettivi obbligatori}
 \begin{itemize}
@@ -57,7 +59,7 @@ Prima di iniziare il periodo di stage, sono stati discussi insieme al tutor azie
 
 \subsection{Obiettivi desiderabili}
 \begin{itemize}
-	\item test e monitoraggio dell’applicativo tramite l’integrazione con 2 pagine Facebook reali.
+	\item test e monitoraggio dell’applicativo tramite l’integrazione con 2 pagine Facebook reali;
 \end{itemize}
 
 \section{Pianificazione del lavoro}
@@ -85,15 +87,16 @@ Durante il periodo di stage, sono state incontrare diverse difficoltà, utili a 
 Nei primi giorni in azienda l'ostacolo principale è stato l'inserimento in un team di lavoro affiatato e di esperienza, nonostante i suoi componenti siano stati molto disponibili e aperti a domande e chiarimenti. In particolare:
 \begin{itemize}
 	\item il \textbf{linguaggio tecnico/aziendale} non è stato da subito di facile apprendimento. In parte il problema sorgeva quando i \glspl{brainstorming} del team vertevano su tecnologie a me sconosciute, oppure su aspetti tecnici dei loro prodotti. Con il passare del tempo, attraverso l'utilizzo di un piccolo glossario individuale dove segnavo le spiegazioni dei termini a me non chiari, ho assimilato la maggior parte dei concetti, potendo così partecipare alle riunione del team in modo attivo e costruttivo;
-	\item lavorare all'interno di un team non è un'attività semplice. Bisogna imparare a rispettare le scadenze nel rispetto dei colleghi e saper elaborare strategie nel caso in cui essi non siano riusciti a rispettare le proprie. Grazie all'esperienza che ho maturato sotto questo punto di vista, ho capito quanto sia importante pianificare con cura le attività e il tempo da destinare ad ognuna di esse.
+	\item lavorare all'interno di un \textbf{team} non è un'attività semplice. Bisogna imparare a rispettare le scadenze nel rispetto dei colleghi e saper elaborare strategie nel caso in cui essi non siano riusciti a rispettare le proprie. Grazie all'esperienza che ho maturato sotto questo punto di vista, ho capito quanto sia importante pianificare con cura le attività e il tempo da destinare ad ognuna di esse.
 \end{itemize}
 
-\subsection{Difficoltà lavorative}
+\subsection{Difficoltà lavorative e soluzioni adottate}
 Durante lo svolgimento del mio progetto ho riscontrato queste difficoltà principali:
 \begin{itemize}
-	\item scelta del \textbf{miglior strumento per il \gls{NLP}}: il \gls{NLP} è un problema che è stato affrontato relativamente recentemente nel mondo dell'informatica. Le tecnologie che il mercato mette a disposizione sono limitate e spesso non soddisfacenti per gli obiettivi che mi sono stati richiesti. La ricerca di uno strumento idoneo non è stata facile, anche perchè l'azienda richiedeva non ci fossero costi per il suo utilizzo. Dopo una buona analisi del mercato, con la produzione di una relativa documentazione consegnata al tutor aziendale, è stato deciso di utilizzare Api.ai, servizio acquistato da Google nel 2016, che offre svariate funzionalità senza alcun costo, ma con delle sole limitazioni in termini di richieste giornaliere e mensili (una breve analisi dei principali strumenti di NLP è presente nella sezione???);
-	\item \textbf{possibili richieste degli utenti}: il mio compito era quello di fornire una risposta tramite i \gls{chatbot} alle possibile domande di un utilizzatore. Se in primo momento questo non sembrava un \emph{task} troppo complicato, si è però trasformato in un problema non di semplice gestione, in quanto il dominio di richieste di un utente può essere vasto e molto vario. Per cercare di superare questo ostacolo, in accordo con il tutor e il team aziendale, si è deciso di limitare le categorie di domande a cui il \gls{chatbot} risponde, fornendo un messaggio adeguato in caso di una richiesta dell'utente non gestita. Sarà poi compito dell'azienda ampliare le funzionalità dei \gls{chatbot}, visto il poco tempo a mia disposizione, valutando le richieste fatte dagli utenti nell'apposita sezione di Api.ai;
-	\item \textbf{gestione del sessionId}: nel \gls{JSON} utilizzato per interrogare Api.ai tramite una richiesta PUSH, deve essere presente obbligatoriamente il campo sessionId, per identificare univocamente il mittente della richiesta. La gestione di questo campo è stata quindi di notevole importanza nel garantire ad ogni utente una corretta interazione con il \gls{chatbot}. Per assegnare ad ogni utente un sessionId univoco è stato deciso di creare un campo nella tabella degli utenti del database, dove memorizzare la stringa rappresentata dall'id dell'utente nel database e il timestamp del collegamento al bot, garantendo così l'unicità della stessa. In questo modo le domande fatte dall'utente al \gls{chatbot} saranno gestite come una conversazione, invece che una singola domanda senza una storia;
+	\item scelta del \textbf{miglior strumento per il \gls{NLP}}: il \gls{NLP} è un problema che è stato affrontato relativamente recentemente nel mondo dell'informatica. Le tecnologie che il mercato mette a disposizione sono limitate e spesso non soddisfacenti per gli obiettivi che mi sono stati richiesti. La ricerca di uno strumento idoneo non è stata facile, anche perchè l'azienda richiedeva non ci fossero costi per il suo utilizzo. Dopo una buona analisi del mercato, con la produzione di una relativa documentazione consegnata al tutor aziendale, è stato deciso di utilizzare api.ai, servizio acquistato da Google nel 2016, che offre svariate funzionalità senza alcun costo, ma con delle sole limitazioni in termini di richieste giornaliere e mensili (una breve analisi dei principali strumenti di NLP è presente nella sezione \ref{nlp});
+	\item \textbf{possibili richieste degli utenti}: il mio compito era quello di fornire una risposta tramite i \glspl{chatbot} alle possibile domande di un utilizzatore. Se in primo momento questo non sembrava un \emph{task} troppo complicato, si è però trasformato in un problema non di semplice gestione, in quanto il dominio di richieste di un utente può essere vasto e molto vario. Per cercare di superare questo ostacolo, in accordo con il tutor e il team aziendale, si è deciso di limitare le categorie di domande a cui il \gls{chatbot} risponde, fornendo un messaggio adeguato in caso di una richiesta dell'utente non gestita. Sarà poi compito dell'azienda ampliare le funzionalità dei \glspl{chatbot}, visto il poco tempo a mia disposizione, valutando le richieste fatte dagli utenti nell'apposita sezione di Api.ai;
+	\item \textbf{gestione del sessionId}: nel \gls{JSON} utilizzato per interrogare api.ai tramite una richiesta \gls{POST}, deve essere presente obbligatoriamente il campo \textbf{sessionId}, per identificare univocamente il mittente della richiesta. La gestione di questo campo è stata quindi di notevole importanza nel garantire ad ogni utente una corretta interazione con il \gls{chatbot}. Per assegnare ad ogni utente un sessionId univoco è stato deciso di creare un campo nella tabella degli utenti del database, dove memorizzare la stringa rappresentata dall'id dell'utente nel database e il \emph{timestamp} del momento in cui esso si è collegato al bot, garantendo così l'unicità della stessa. In questo modo api.ai, e di conseguenza il \gls{chatbot}, gestiscono tutti i possibili utenti separatamente e non come un'unica persona;
+	\item \textbf{documentazione scarsa del software aziendale}: dopo aver istruito la piattaforma di api.ai, avevo il compito di integrare le nuove funzionalità nel software aziendale dedicato alla gestione dei \glspl{chatbot}. Il problema è sorto quando non ho avuto a disposizione una chiara documentazione del codice, in modo da capirne \emph{package}, classi e metodi. Per risolvere questa mancanza ho chiesto al mio tutor aziendale una breve spiegazione delle porzioni di codice che avrei dovuto riutilizzare nelle mie nuove classi, potendo così capire il funzionamento generale dei vari \emph{package}. Grazie al mio studio individuale, e alcuni chiarimenti chiesti agli sviluppatori, ho potuto passare autonomamente all'attività di programmazione, introducendo così le mie nuove funzionalità del prodotto.
 \end{itemize}
 
 \section{Strumenti utilizzati}
@@ -108,16 +111,16 @@ Inoltre offre una integrazione con \gls{Mercurial} per gestire \emph{push}, \emp
 \end{figure}
 \subsection{Api.ai}
 Api.ai è una società nata nell'ottobre del 2010 e acquisita da Google Inc. nel 2016. Api.ai è una piattaforma di conversazione
-che permette interazioni sofisticate con il linguaggio naturale. All'interno del progetto è stata utilizzata per trasformare le domande degli utenti in dati processabili, dopo aver creato due agenti, uno per ciascun \gls{chatbot}, ed averli istruiti secondo le possibili \gls{FAQ} dei rispettivi ambiti di utilizzo.\\
+che permette interazioni sofisticate con il linguaggio naturale. All'interno del progetto è stata utilizzata per trasformare le domande degli utenti in dati processabili, dopo aver creato due \emph{agents}, uno per ciascun \gls{chatbot}, ed averli istruiti secondo le possibili \gls{FAQ} dei rispettivi ambiti di utilizzo.\\
 Api.ai poteva essere integrato nel software aziendale in due diversi modi:
 \begin{itemize}
-	\item connesso direttamente al \gls{chatbot} di Facebook Messenger, grazie alla semplice integrazione prevista da Api.ai, estraendo le informazioni dal database aziendale tramite dei \emph{webhook}, anch'essi facilmente gestibili tramite la piattaforma di Api.ai;
-	\item come strumento esterno al software aziendale, con il bisogno di interrogarlo tramite delle richieste \gls{POST} HTTP solo in alcuni casi specifici, con le domande poste dall'utente.
+	\item \textbf{connesso direttamente al \gls{chatbot}} di Facebook Messenger, grazie alla semplice integrazione prevista da api.ai, estraendo le informazioni dal database aziendale tramite dei \emph{webhook}, anch'essi facilmente gestibili tramite la piattaforma di api.ai;
+	\item come \textbf{strumento esterno} al software aziendale, con il bisogno di interrogarlo tramite delle richieste \gls{POST} HTTP solo in alcuni casi specifici, con le domande poste dall'utente.
 \end{itemize} 
 Dopo aver valutato entrambe le opzioni, ho scelto di intraprendere la seconda per due motivazioni:
 \begin{itemize}
-	\item utilizzando Api.ai come strumento esterno non è stato necessario introdurre dipendenze verso di esso nel codice, dando così la possibilità, se ci fosse bisogno in futuro, all'azienda di cambiare questa tecnologia con un'altra senza grossi problemi, cosa che sarebbe stata molto più difficile nell'altro caso;
-	\item Api.ai mette a disposizione un \gls{SDK} per Java molto utile, anche se non ben documentato. In ogni caso dopo aver capito il suo funzionamento è stato semplice sfruttarlo per interrogare Api.ai con poche righe di codice. 
+	\item utilizzando api.ai come strumento esterno non è stato necessario introdurre dipendenze verso di esso nel codice, dando così la possibilità, se ci fosse bisogno in futuro, all'azienda di cambiare questa tecnologia con un'altra senza grossi problemi, cosa che sarebbe stata molto più difficile nell'altro caso;
+	\item api.ai mette a disposizione un \gls{SDK} per Java molto utile, anche se non ben documentato. In ogni caso dopo aver capito il suo funzionamento è stato semplice sfruttarlo per interrogare api.ai con poche righe di codice. 
 \end{itemize}
 \begin{figure}[h]
 	\centering
@@ -125,8 +128,8 @@ Dopo aver valutato entrambe le opzioni, ho scelto di intraprendere la seconda pe
 	\caption{Logo di api.ai}
 \end{figure}
 \subsection{Hibernate}
-Hibernate è una piattaforma open-source ad alto rendimento per lo sviluppo di applicazioni Java, che fornisce il servizio di \gls{ORM}, ovvero si occupa della mappatura tra le classi Java e le relative tabelle di un database \gls{SQL}.
-Gestisce dunque il salvataggio degli oggetti di tali classi ed il reperimento dalle entità dal database, automatizzando le query necessarie e provvedendo alla reistanziazione dell’oggetto mappato sul database.
+Hibernate è una piattaforma \gls{open source} ad alto rendimento per lo sviluppo di applicazioni Java, che fornisce il servizio di \gls{ORM}, ovvero si occupa della mappatura tra le classi Java e le relative tabelle di un database \gls{SQL}.
+Gestisce dunque il salvataggio degli oggetti di tali classi ed il reperimento dalle entità dal database, automatizzando le \emph{query} necessarie e provvedendo alla reistanziazione dell’oggetto mappato sul database.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.35]{../Immagini/Hibernate.png}
@@ -134,30 +137,36 @@ Gestisce dunque il salvataggio degli oggetti di tali classi ed il reperimento da
 \end{figure}
 
 \subsection{Database MySQL} 
-L'azienda \azienda{} utilizza un database MySQL per la memorizzazione e gestione dei dati relativi ai progetti dei \gls{chatbot}. È il più diffuso database \Gls{open source} basato sul linguaggio \gls{SQL} ed è di tipo relazionale, ovvero segue il principio che tutti i dati sono rappresentati come relazioni e manipolati con gli operatori dell’algebra relazionale o del calcolo relazionale.
+L'azienda \azienda{} utilizza un database MySQL per la memorizzazione e gestione dei dati relativi ai progetti dei \glspl{chatbot}. È il più diffuso database \gls{open source} basato sul linguaggio \gls{SQL} ed è di tipo relazionale, ovvero segue il principio che tutti i dati sono rappresentati come relazioni e manipolati con gli operatori dell’algebra relazionale o del calcolo relazionale.
 Lo stagista è stato incaricato di capirne la struttura e come esso veniva gestito all'interno dell'applicativo, per poi utilizzarlo al meglio nello sviluppo del proprio prodotto.\\
 
 \subsection{Strumenti aziendali}
-Infine sono stati utilizzati alcuni degli strumenti consolidati nel contesto aziendale, come \emph{BitBucket} e \emph{Mercurial} per quanto riguarda il versionamento del codice, \emph{Slack} per le comunicazioni con gli altri dipendenti e il tutor ed \emph{Asana} per il tracciamento dei \emph{task} da svolgere (strumenti esposti nella sezione \ref{Tecnologie}).
+Infine sono stati utilizzati alcuni degli strumenti consolidati nel contesto aziendale, come \textbf{BitBucket} e \gls{Mercurial} per quanto riguarda il versionamento del codice, \textbf{Slack} per le comunicazioni con gli altri dipendenti e il tutor ed \textbf{Asana} per il tracciamento dei \emph{task} da svolgere (strumenti esposti nella sezione \ref{Tecnologie}).
 
 
 
 \section{Prodotto ottenuto}
-Il prodotto che mi è stato richiesto di sviluppare consisteva nell'incremento delle funzionalità di due \gls{chatbot}, creati e gestiti da \azienda{}, per offrire agli utenti uno strumento che si avvicinasse il più possibile ad una chat normale con un essere umano.\\
-Al mio arrivo in azienda questi due prodotti potevano essere utilizzati dagli utenti solamente attraverso l'interfaccia grafica che mettono a disposizione. In particolare, per i \gls{chatbot} di Facebook Messenger è possibile creare un menù, usufruibile in qualsiasi momento attraverso il pulsante rappresentato dalle 3 righe orizzontali, dove inserire dei comandi per mostrare determinate categorie di informazioni (ad esempio nel bot per le previsioni del tempo esiste il comando "Previsioni" che mostra il meteo per tutta la settimana, nella zona di interesse). Ci sono poi altri "caroselli" messi a disposizione dello sviluppatore per costruire le proprie risposte, spiegati ed illustrati nella documentazione di Facebook for Developers.\\
+Il prodotto che mi è stato richiesto di sviluppare consisteva in un incremento delle funzionalità di due \glspl{chatbot}, creati e gestiti da \azienda{}, per offrire agli utenti uno strumento che si avvicinasse il più possibile ad una chat normale con un essere umano.\\
+Al mio arrivo in azienda questi due prodotti potevano essere utilizzati dagli utenti solamente attraverso l'interfaccia grafica che mettono a disposizione. In particolare, per i \gls{chatbot} di Facebook Messenger è possibile creare un menù, usufruibile in qualsiasi momento attraverso il pulsante rappresentato dalle 3 righe orizzontali, dove inserire dei comandi per mostrare determinate categorie di informazioni (ad esempio nel bot per le previsioni del tempo esiste il comando "Previsioni" che mostra il meteo per tutta la settimana, nella zona di interesse). 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{../Immagini/menu.png}
+	\caption{Esempio di menù di un \gls{chatbot} di Facebook}
+\end{figure}
 
-I risultati che sono riuscito ad ottenere nelle 300 ore di stage sono stati ritenuti molto soddisfacenti dall'azienda, e vengono illustrati attraverso degli esempi per i due diversi \gls{chatbot}.
+Ci sono poi altri "caroselli" messi a disposizione dello sviluppatore per costruire le proprie risposte, spiegati ed illustrati nella documentazione di Messenger-platform\footcite{messenger}.\\
+
+I risultati che sono riuscito ad ottenere nelle 300 ore di stage sono stati ritenuti molto soddisfacenti dall'azienda, che utilizza già le mie funzionalità nel bot del meteo. Gli incrementi che ho apportato ai due \glspl{chatbot} sono esposti di seguito. 
 
 \subsubsection{Meteo Veneto Bot}
-Si tratta di un \gls{chatbot} innovativo che sfrutta i dati messi a disposizione da ARPA Veneto attraverso un file \gls{XML}. I compito di questo  \gls{chatbot} è di dare delle informazioni all'utente sulle previsioni del tempo nella regione del Veneto, in particolare nella zona di interesse dell'utente che specifica all'inizio della conversazione inviando la propria posizione, o scrivendo il comune che desidera. Dopo aver premuto i pulsante "Previsioni", presente nel menù, si possono visualizzare i dettagli del meteo dei vari giorni della settimana, che mostrano temperature, precipitazione, venti ed ascoltare il bollettino.\\
+Si tratta di un \gls{chatbot} innovativo che sfrutta i dati messi a disposizione da ARPA Veneto attraverso un file \gls{XML}. Il compito di questo  \gls{chatbot} è di dare delle informazioni all'utente sulle previsioni del tempo nella regione del Veneto, in particolare nella zona di interesse dell'utente che specifica all'inizio della conversazione inviando la propria posizione, o scrivendo il comune che desidera. Dopo aver premuto il pulsante "Previsioni", presente nel menù, si possono visualizzare i dettagli del meteo dei vari giorni della settimana, che mostrano temperature, precipitazione, venti ed ascoltare il bollettino.\\
 Al termine del mio lavoro sono state introdotte nuove funzionalità che permettono all'utente di domandare:
 \begin{itemize}
 	\item il meteo per un determinato giorno in un comune preciso;
 	\item se è prevista pioggia, neve, sole, nebbia per un determinato giorno in un comune preciso;
+	\item le temperature previste;
 	\item di ascoltare il bollettino emesso da ARPA Veneto.
 \end{itemize}
-
-Di seguito vengono mostrati una serie di domande che è possibile fare al \gls{chatbot}, con le relative risposte.
 
 \subsubsection{Gestore di eventi}
 Si tratta di un template di \gls{chatbot} sviluppato da \azienda{} che viene  personalizzato ogni qualvolta un cliente ne richieda l'utilizzo, mantenendo in ogni caso delle funzionalità principali. Il suo compito è quello di mostrare delle informazioni riguardanti l'evento per il quale il \gls{chatbot} è stato personalizzato. In particolare si possono ottenere delle indicazioni sulle conferenze, come orario, durata, argomento, e sulle sale presenti.\\
@@ -189,5 +198,5 @@ Una volta posta una domanda al \gls{chatbot}, e ricevuta la relativa risposta, �
 	\item[-] Utente: "E in P140?"
 	\item[-] Bot: "Programmazione 1".
 \end{itemize}
-Nella seconda risposta il sistema ha tenuto conto della prima domanda fatta dall'utente, cercando così la conferenza che sis volge alle 12 in P140. Questo meccanismo è stato implementato grazie ai \emph{context} di Api.ai.
+Nella seconda risposta il sistema ha tenuto conto della prima domanda fatta dall'utente, cercando così la conferenza che si svolge alle 12 in P140. Questo meccanismo è stato implementato grazie ai \emph{context} di api.ai.
 
