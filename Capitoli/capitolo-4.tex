@@ -128,19 +128,19 @@ Ad ogni nuova emissione del bollettino, i nuovi dati vengono inseriti nel databa
 Gli intents che ho deciso di creare per soddisfare tutti i requisiti sono i seguenti:
 \begin{itemize}
 	\item \textbf{richiesta\_meteo}: permette all'utente di chiedere le previsioni del meteo specificando una giornata o un periodo di tempo (es. weekend) e il comune di interesse (se non viene specificato, si considera il comune da lui selezionato all'inizio dell'interazione con il \gls{chatbot}). La risposta contiene un carosello con il meteo richiesto.
-	\begin{figure}[h!]
+	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/richiesta_meteo.png}
 		\caption{Esempio di }
 	\end{figure}	
 	\item \textbf{richiesta\_sole}: permette all'utente di chiedere se è previsto il sole in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto il sole, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/richiesta_sole.png}
 		\caption{Esempio di }
 	\end{figure}	
 	\item \textbf{richiesta\_pioggia}: permette all'utente di chiedere se è prevista pioggia in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista pioggia, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/richiesta_pioggia.png}% "%" necessario
 		\qquad\qquad
@@ -148,43 +148,43 @@ Gli intents che ho deciso di creare per soddisfare tutti i requisiti sono i segu
 		\caption{Didascalia comune alle due figure}
 	\end{figure}
 	\item \textbf{richiesta\_nebbia}: permette all'utente di chiedere se è prevista nebbia in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista nebbia, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/richiesta_nebbia.png}
 		\caption{Esempio di }
 	\end{figure}
 	\item \textbf{richiesta\_neve}: permette all'utente di chiedere se è prevista neve in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista neve, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/richiesta_nebbia.png}
 		\caption{Esempio di }
 	\end{figure}
 	\item \textbf{richiesta\_bel\_tempo}: permette all'utente di chiedere se è previsto bel tempo in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto bel tempo, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/richiesta_bel_tempo.png}
 		\caption{Esempio di }
 	\end{figure}
 	\item \textbf{richiesta\_brutto\_tempo}: permette all'utente di chiedere se è previsto brutto tempo in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto brutto tempo, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/richiesta_brutto_tempo.png}
 		\caption{Esempio di }
 	\end{figure}
 	\item \textbf{richiesta\_temperature}: permette all'utente di chiedere le temperature previste in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta contiene le temperature massimi e minime previste fornite da ARPA Veneto.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/richiesta_brutto_tempo.png}
 		\caption{Esempio di }
 	\end{figure}
 	\item \textbf{ascolta\_bollettino}: permette all'utente di chiedere il bollettino audio emesso da ARPA Veneto ogni giorno. La risposta contiene il file audio richiesto.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/bollettino.png}
 		\caption{Esempio di }
 	\end{figure}
 	\item \textbf{fenomeni\_particolari}: permette all'utente di chiedere se sono presenti avvisi o fenomeni particolari emessi da ARPAV. La risposta contiene questi avvisi, se presenti.
-	\begin{figure}[h!]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.12]{../Immagini/bollettino.png}
 		\caption{Esempio di }
@@ -204,12 +204,21 @@ Nella progettazione di questo \emph{agent} ho creato queste nuove \emph{entities
 	\end{itemize}
 Combinando queste \emph{entities} l'utente può specificare precisamente le previsioni che desidera ricevere. Può infatti porre al \gls{chatbot} domande del tipo: \emph{"Che tempo farà domani sera?"}, \emph{"Dimmi le previsioni per il prossimo weekend"}, \emph{"Ci sarà il sole venerdì pomeriggio?"}.
 \end{itemize}
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.5]{../Immagini/time.png}
 	\caption{Entity time definita nell'agent}
 \end{figure}
 \newpage
+\section{Progettazione delle componenti}
+Per quanto riguarda la progettazione delle componenti da aggiungere al software aziendale ho deciso di creare due classi per ciascun \gls{chatbot}, con un comportamento simile. La prima ha il compito di:
+\begin{itemize}
+	\item \textbf{interrogare api.ai}, costruendo il messaggio da inviare con il token dell'agent, l'input e il sessionId dell'utente;
+	\item \textbf{analizzare la risposta}, invocando il metodo corretto a seconda del valore del campo \emph{action} del \gls{JSON}.
+\end{itemize}
+La seconda classe invece contiene tutti i metodi che rappresentano la logica del \gls{chatbot}, analizzando i \emph{parameters} del \gls{JSON} ritornato da api.ai e formulando la risposta da visualizzare nella chat. Questi metodi hanno riutilizzato dei componenti già presenti nel software, per costruire modelli di risposta già previsti nel \gls{chatbot} prima del mio arrivo.
+
+
 \section{Jaro Winkler distance}
 Durante l'attività di progettazione mi sono reso conto come fosse necessario gestire un possibile errore di scrittura dell'utente in una delle sue domande, soprattutto nelle parole fondamentali per formulare le risposte, come ad esempio il nome di un comune per il \gls{chatbot} del meteo o il nome di una conferenza in quello degli eventi. In un primo momento infatti l'input dell'utente veniva utilizzato direttamente nelle \emph{query} \gls{SQL} per interrogare il database ed ottenere i dati di interesse, soprattutto attraverso l'operatore \emph{"LIKE"}. In questo modo però non è possibile gestire il caso in cui un utente scriva ad esempio il comune "Padvoa", intendendo Padova. \\
 Per ovviare a questo problema quindi è stato deciso di introdurre, dopo uno studio delle possibili soluzioni, la Jaro Winkler distance\footcite{jaro}, ossia una metrica che misura la "distanza" tra due stringhe per capire quanto esse siano simili tra loro. Grazie a questa accortezza, nel caso di errore di scrittura, il \gls{chatbot} è in grado di:
@@ -217,7 +226,7 @@ Per ovviare a questo problema quindi è stato deciso di introdurre, dopo uno stu
 	\item fornire una serie di opzioni di cosa secondo lui l'utente voleva scrivere, dando la possibilità ad esso di selezionare quella giusta;
 	\item fornire i dati richiesti dall'utente nel caso ci sia un'unica corrispondenza simile a quanto scritto dall'utente nel database.
 \end{itemize}
-\begin{figure}[h!]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.12]{../Immagini/meteo_scelta.png}
 	\caption{Esempio di utilizzo della Jaro Winkler distance}
