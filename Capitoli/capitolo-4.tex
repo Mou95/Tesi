@@ -26,7 +26,8 @@ Prima di passare all'attività di progettazione è stato fondamentale analizzare
 \section{Progettazione agents api.ai}
 Durante la progettazione degli \emph{agents} per api.ai è stato necessario definire tutti gli \emph{intents} utili a soddisfare i requisiti definiti durante l'analisi dei requisiti. Il passo successivo è stato quello di progettare le \emph{user says} per ogni \emph{intent} e le relative \emph{entity}.
 
-\subsubsection{Gestore di eventi}
+\subsection{Gestore di eventi}
+\subsubsection{Intent}
 Per quanto riguarda la progettazione del \gls{chatbot} dedicato alla gestione di eventi, gli \emph{intents} che mi sono serviti per soddisfare tutti i requisiti sono stati i seguenti:
 \begin{itemize}
 	\item \textbf{durata\_conferenza}: permette all'utente di domandare la durata di una conferenza e viene attivato con domande come: \emph{"Quanto dura la conferenza Y?"}. La risposta del \gls{chatbot} contiene il nome, l'inizio, la fine e la durata (in minuti o in ore) della conferenza richiesta dall'ospite;
@@ -91,6 +92,20 @@ Per quanto riguarda la progettazione del \gls{chatbot} dedicato alla gestione di
 	\end{figure}			
 	\item \textbf{richiesta\_aiuto}: permette all'utente di ottenere delle informazioni per l'utilizzo del \gls{chatbot}. La risposta contiene una breve spiegazione e delle domande che possono essere rivolte al bot.
 \end{itemize}
+\newpage
+\subsubsection{Entity}
+Nella progettazione di questo \emph{agent} ho creato queste nuove \emph{entities}:
+\begin{itemize}
+	\item \textbf{conference}: viene utilizzata per gestire i sinonimi della parola "conferenza". In questo modo scrivere assemblea, meeting ha lo stesso risultato di conferenza;
+	\item \textbf{stanza}: viene utilizzata per gestire i sinonimi della parola "stanza". In questo modo l'utente può scrivere aula, sala, padiglione con lo stesso risultato di stanza;
+	\item \textbf{my\_time}: questa \emph{entity} è formata da \emph{@sys.time}, ossia una \emph{system entity} fornita da api.ai per estrarre un orario dall'input dell'utente, e una serie di espressioni per indicare il momento attuale in cui l'utente fa la domanda (adesso, in questo momento, ora). In questo modo se l'utente scrive \emph{"Cosa fanno in aula X adesso?"}, nel \gls{JSON} ritornato da api.ai ci sarà un parametro di tipo \emph{my\_time} con valore "adesso", che potrà essere gestito nella \emph{business logic}.
+\end{itemize}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{../Immagini/conference.png}
+	\caption{Entity conference definita nell'agent}
+\end{figure}
 
 \subsection{Dati ARPA Veneto}
 Il \gls{chatbot} dedicato al meteo è stato realizzato grazie agli \emph{open data} messi a disposizione dall'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto(ARPAV). Ogni giorno, nel sito ufficiale\footcite{arpav}, vengono emessi tre bollettini:
@@ -108,8 +123,8 @@ Il file \gls{XML} che è possibile scaricare, contiene queste informazioni:
 
 Ad ogni nuova emissione del bollettino, i nuovi dati vengono inseriti nel database aziendale, in modo da comunicare agli utenti solamente le notizie più aggiornate.
 
-\subsubsection{Meteo Veneto Bot}
-
+\subsection{Meteo Veneto Bot}
+\subsubsection{Intent}
 Gli intents che ho deciso di creare per soddisfare tutti i requisiti sono i seguenti:
 \begin{itemize}
 	\item \textbf{richiesta\_meteo}: permette all'utente di chiedere le previsioni del meteo specificando una giornata o un periodo di tempo (es. weekend) e il comune di interesse (se non viene specificato, si considera il comune da lui selezionato all'inizio dell'interazione con il \gls{chatbot}). La risposta contiene un carosello con il meteo richiesto.
@@ -176,8 +191,25 @@ Gli intents che ho deciso di creare per soddisfare tutti i requisiti sono i segu
 	\end{figure}
 
 \end{itemize}
-
-
+\newpage
+\subsubsection{Entity}
+Nella progettazione di questo \emph{agent} ho creato queste nuove \emph{entities}:
+\begin{itemize}
+	\item \textbf{fenomeni atmosferici}: ho creato quattro \emph{entities} per \textbf{sole}, \textbf{pioggia}, \textbf{neve}, \textbf{nebbia}, in modo da gestire i possibili sinonimi che un utente può scrivere;
+	\item \textbf{time}: si tratta di una \emph{composite entity} per gestire gli orari e le date scritte dall'utente. In particolare questa \emph{entity} combina tre \emph{system entity} fornite da api.ai:
+	\begin{itemize}
+		\item \textbf{@sys.date}: per le date in formato standard (es. 31 agosto);
+		\item \textbf{@sys.date-period}: per un periodo di tempo formato da più giorni (es. weekend);
+		\item \textbf{@sys.time-period}: per una parte del giorno (es. mattina, pomeriggio, notte);
+	\end{itemize}
+Combinando queste \emph{entities} l'utente può specificare precisamente le previsioni che desidera ricevere. Può infatti porre al \gls{chatbot} domande del tipo: \emph{"Che tempo farà domani sera?"}, \emph{"Dimmi le previsioni per il prossimo weekend"}, \emph{"Ci sarà il sole venerdì pomeriggio?"}.
+\end{itemize}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{../Immagini/time.png}
+	\caption{Entity time definita nell'agent}
+\end{figure}
+\newpage
 \section{Jaro Winkler distance}
 Durante l'attività di progettazione mi sono reso conto come fosse necessario gestire un possibile errore di scrittura dell'utente in una delle sue domande, soprattutto nelle parole fondamentali per formulare le risposte, come ad esempio il nome di un comune per il \gls{chatbot} del meteo o il nome di una conferenza in quello degli eventi. In un primo momento infatti l'input dell'utente veniva utilizzato direttamente nelle \emph{query} \gls{SQL} per interrogare il database ed ottenere i dati di interesse, soprattutto attraverso l'operatore \emph{"LIKE"}. In questo modo però non è possibile gestire il caso in cui un utente scriva ad esempio il comune "Padvoa", intendendo Padova. \\
 Per ovviare a questo problema quindi è stato deciso di introdurre, dopo uno studio delle possibili soluzioni, la Jaro Winkler distance\footcite{jaro}, ossia una metrica che misura la "distanza" tra due stringhe per capire quanto esse siano simili tra loro. Grazie a questa accortezza, nel caso di errore di scrittura, il \gls{chatbot} è in grado di:
@@ -185,3 +217,8 @@ Per ovviare a questo problema quindi è stato deciso di introdurre, dopo uno stu
 	\item fornire una serie di opzioni di cosa secondo lui l'utente voleva scrivere, dando la possibilità ad esso di selezionare quella giusta;
 	\item fornire i dati richiesti dall'utente nel caso ci sia un'unica corrispondenza simile a quanto scritto dall'utente nel database.
 \end{itemize}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.12]{../Immagini/meteo_scelta.png}
+	\caption{Esempio di utilizzo della Jaro Winkler distance}
+\end{figure}
