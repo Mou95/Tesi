@@ -6,7 +6,7 @@
 \chapter{Analisi dei requisiti}
 \label{cap:analisi}
 
-Il primo giorno di stage il tutor aziendale ha indetto una riunione con tutti i dipendenti per definire le funzionalità del prodotto che dovevo sviluppare. Attraverso questo \gls{brainstorming} ho potuto farmi un'idea più precisa del compito a me assegnato. Una volta terminata l'analisi degli strumenti per il \gls{NLP}, ho potuto svolgere l'analisi dei requisiti del mio prodotto. In accordo con il tutor non ho dovuto stilare un documento formale che comprendesse i casi d'uso, ma solo una lista di requisiti funzionali che il prodotto avrebbe dovuto soddisfare.
+Il primo giorno di stage il tutor aziendale ha indetto una riunione con tutti i dipendenti per definire le funzionalità del prodotto che dovevo sviluppare. Attraverso questo \gls{Brainstorming} ho potuto farmi un'idea più precisa del compito a me assegnato. Una volta terminata l'analisi degli strumenti per il \gls{NLP}, ho potuto svolgere l'analisi dei requisiti del mio prodotto. In accordo con il tutor non ho dovuto stilare un documento formale che comprendesse i casi d'uso, ma solo una lista di requisiti funzionali che il prodotto avrebbe dovuto soddisfare.
 
 \section{Tracciamento dei requisiti}
 \label{requisiti}
@@ -24,7 +24,7 @@ dove:
 identificato in forma gerarchica.
 \end{itemize}
 
-La prima tabella contiene i requisiti comuni ai due \gls{chatbot} oggetti dello stage, la seconda tabella riporta i requisiti specifici del \gls{chatbot} per la gestione degli eventi, mentre la terza quelli di Meteo Veneto bot.
+La prima tabella contiene i requisiti comuni ai due \gls{Chatbot} oggetti dello stage, la seconda tabella riporta i requisiti specifici del \gls{Chatbot} per la gestione degli eventi, mentre la terza quelli di Meteo Veneto bot.
 \newpage
 \normalsize
 \begin{longtable}{|c|>{\centering}m{7cm}|c|}
@@ -57,7 +57,7 @@ RO1.3.1 & L'utente deve poter chiedere informazioni riguardo il programma dell'e
 RO1.3.2 & L'utente deve poter chiedere informazioni riguardo il programma dell'evento in una specifica giornata ed in una precisa stanza & Obbligatorio\\
 RO1.3.3 & L'utente deve poter chiedere informazioni riguardo il programma dell'evento in una specifica ora ed in una precisa stanza & Obbligatorio\\
 RO1.3.4 & L'utente deve poter chiedere informazioni riguardo il programma dell'evento specificando il giorno, l'ora e l'aula & Obbligatorio\\
-RD5 & L'utente deve poter ricevere informazioni sul funzionamento del \gls{chatbot} scrivendo "aiuto" & Desiderabile\\ 
+RD5 & L'utente deve poter ricevere informazioni sul funzionamento del \gls{Chatbot} scrivendo "aiuto" & Desiderabile\\ 
 RO6 & L'utente deve poter visualizzare la propria agenda scrivendo "agenda" & Obbligatorio\\ 
 \hline
 \caption{Requisiti funzionali del chatbot per la gestione degli eventi}
@@ -113,14 +113,14 @@ RO8 & L'utente deve poter riceve l'audio del bollettino meteo scrivendo "ascolta
 Il primo passo da compiere per iniziare lo sviluppo de prodotto è stato scegliere la piattaforma di \gls{NLP} migliore in base ai requisiti imposti dall'azienda. Le richieste fatte da \azienda{} riguardanti questo strumento erano le seguenti:
 \begin{itemize}
 	\item \textbf{costo}: il prezzo per il suo utilizzo doveva essere uguale a 0;
-	\item \textbf{lingua}: deve supportare la lingua italiana, visto che al momento attuale i \glspl{chatbot} sono implementati solo con quella;
+	\item \textbf{lingua}: deve supportare la lingua italiana, visto che al momento attuale i \glspl{Chatbot} sono implementati solo con quella;
 	\item \textbf{documentazione}: il servizio deve essere ben documentato per permettere all'azienda, una volta finito il periodo di stage, di imparare ad utilizzarlo velocemente.
 \end{itemize}
 
 Questa attività di analisi di mercato si è rivelata quindi fondamentale per la buona riuscita del progetto, visto l'importanza che questo strumento avrebbe avuto nell'intero periodo di sviluppo. Le piattaforme da me studiate e analizzate sono riportate di seguito.
 
 \subsubsection{IBM Watson Conversation}
-IBM Watson Conversation\footcite{watson} è un prodotto della piattaforma IBM Watson, che attraverso IBM Cloud dà la possibilità di integrare i più potenti mezzi di \gls{AI} nelle tue applicazioni. Il servizio di Conversation, oltre alla possibilità di creare \gls{chatbot} e agenti virtuali, può essere istruito ed interrogato per analizzare il testo posto in input, attraverso le \gls{API} messe a disposizione.\\
+IBM Watson Conversation\footcite{watson} è un prodotto della piattaforma IBM Watson, che attraverso IBM Cloud dà la possibilità di integrare i più potenti mezzi di \gls{AI} nelle tue applicazioni. Il servizio di Conversation, oltre alla possibilità di creare \gls{Chatbot} e agenti virtuali, può essere istruito ed interrogato per analizzare il testo posto in input, attraverso le \gls{API} messe a disposizione.\\
 È possibile infatti creare dei \emph{workspace} dedicati dove, attraverso \emph{intent} ed \emph{entities} creati e gestiti dallo sviluppatore, analizzare le domande poste dagli utenti, estraendo i dati che più interessano. L'integrazione con l'applicativo aziendale risultava semplice, grazie al \gls{SDK} di Java\footcite{watsonSDK} messo a disposizione da IBM.
 
 \begin{figure}[h]
@@ -145,7 +145,7 @@ Per quanto riguarda le richieste dell'azienda:
 \subsubsection{wit.ai}
 wit.ai\footcite{witai} è una società nata nell'ottobre del 2013 e acquisita da Facebook Inc. nel 2015.
 L'obiettivo di wit.ai è quello di semplificare la creazione di applicazioni che prevedono interazioni testuali o vocali; per farlo viene messa a disposizione degli sviluppatori una piattaforma di linguaggio naturale aperta ed estensibile che ha la peculiarità di apprendere tramite ogni interazione eseguita.\\
-wit.ai mette a disposizione un \gls{SDK} gratuito ed \gls{open source} per il riconoscimento del linguaggio
+wit.ai mette a disposizione un \gls{SDK} gratuito ed \gls{Open source} per il riconoscimento del linguaggio
 naturale. Questa piattaforma è caratterizzata dall'utilizzo di \emph{context}, \emph{intent} ed \emph{entity} che sono
 dei costrutti messi a disposizione per tradurre le richieste vocali dell'utente in dati processabili. In particolare il \emph{context} si utilizza per monitorare lo stato della conversazione tra l'utente e wit.ai.
 
@@ -172,7 +172,7 @@ Dal punto di vista tecnico l'unica mancanza di questo strumento, che ha influito
 
 \subsubsection{Microsoft LUIS}
 Microsoft LUIS (Language Understanding Intelligent Service)\footcite{luis} è un prodotto di \emph{Microsoft Azure}, dedicato a comprendere le richieste di una persona tramite un \emph{language model} (entity/intent). \\
-Come nelle altre piattaforme lo sviluppatore può creare degli \emph{intents}, cioè delle categorie di azioni che l'utente può intraprendere, dove nelle frasi ad esse correlate vengono evidenziate le \emph{entities}, ossia i pezzi di informazione di interesse, per poi gestirle nella logica del \gls{chatbot}. LUIS inoltre mette a disposizione la possibilità di "marcare" le \emph{entity} come \emph{required}, al contrario di wit.ai, e anche la creazione di cosiddette \emph{composite entities}, che possono essere intese come il raggruppamento di più \emph{entity} in una unica.
+Come nelle altre piattaforme lo sviluppatore può creare degli \emph{intents}, cioè delle categorie di azioni che l'utente può intraprendere, dove nelle frasi ad esse correlate vengono evidenziate le \emph{entities}, ossia i pezzi di informazione di interesse, per poi gestirle nella logica del \gls{Chatbot}. LUIS inoltre mette a disposizione la possibilità di "marcare" le \emph{entity} come \emph{required}, al contrario di wit.ai, e anche la creazione di cosiddette \emph{composite entities}, che possono essere intese come il raggruppamento di più \emph{entity} in una unica.
 
 Per quanto riguarda le richieste dell'azienda:
 \begin{itemize}
@@ -188,7 +188,7 @@ Per quanto riguarda le richieste dell'azienda:
 \end{figure}
 
 \subsubsection{Amazon Lex}
-Amazon Lex\footcite{lex} è un servizio per la creazione di interfacce di comunicazione tramite voce e testo per qualsiasi tipo di applicazione. Amazon Lex offre funzionalità avanzate di apprendimento approfondito per il riconoscimento vocale e la dettatura, nonché per il riconoscimento del linguaggio naturale e la comprensione di testi, consentendo la creazione di applicazioni coinvolgenti e conversazioni realistiche. Con Amazon Lex, le stesse tecnologie di apprendimento approfondito su cui si basa \emph{Amazon Alexa} sono disponibili a tutti gli sviluppatori, consentendo così la creazione di \glspl{chatbot} sofisticati e naturali in modo semplice e veloce.\\
+Amazon Lex\footcite{lex} è un servizio per la creazione di interfacce di comunicazione tramite voce e testo per qualsiasi tipo di applicazione. Amazon Lex offre funzionalità avanzate di apprendimento approfondito per il riconoscimento vocale e la dettatura, nonché per il riconoscimento del linguaggio naturale e la comprensione di testi, consentendo la creazione di applicazioni coinvolgenti e conversazioni realistiche. Con Amazon Lex, le stesse tecnologie di apprendimento approfondito su cui si basa \emph{Amazon Alexa} sono disponibili a tutti gli sviluppatori, consentendo così la creazione di \glspl{Chatbot} sofisticati e naturali in modo semplice e veloce.\\
 L'interfaccia grafica consente ci creare i propri \emph{intents} in modo intuitivo, seguendo le linee generali delle altre piattaforme.
 \begin{figure}[!h]
 	\centering
