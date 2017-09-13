@@ -18,5 +18,24 @@ In ogni caso, vista l'importanza di queste attività, sono state adottate tecnic
 \section{Verifica e validazione dei chatbots}
 Gran parte del progetto di stage verteva nell'istruire gli \emph{agent} di api.ai per gestire le domande degli utenti fatte attraverso i \gls{Chatbot}. Essendo quindi una parte molto importante del prodotto sono stati creati alcuni test per verificare e validare le sue funzionalità. Questi test non sono stati automatizzati in quanto si è deciso di svolgerli attraverso due pagine Facebook create dall'azienda dove sono stati associati i due \glspl{Chatbot} di prova.\\
 Si è quindi pensato insieme al tutor di impostare una serie di domande da porre al bot, cercando di coprire tutti i requisiti che esso dovesse soddisfare. \\
-Grazie a questi controlli è stato possibile accertare che entrambi i \glspl{Chatbot} soddisfano tutti i requisiti obbligatori e desiderabili esposti nella sezione \ref{requisiti}.
+Grazie a questi controlli è stato possibile accertare che entrambi i \glspl{Chatbot} soddisfano tutti i requisiti obbligatori e desiderabili esposti nella sezione \ref{requisiti}.\\ \\
+La procedura seguita per verificare e validare il comportamento dei due \glspl{Chatbot} è stata la seguente:
+\begin{itemize}
+	\item decisione della domanda da sottoporre in base ai requisiti da soddisfare;
+	\item previsione della risposta che il \gls{Chatbot} doveva fornire;
+	\item scrittura della domanda tramite la chat di Facebook o Messenger;
+	\item controllo della risposta; nel caso fosse sbagliata:
+	\begin{itemize}
+		\item scrittura della domanda nella sezione dedicata di api.ai per verificare che il \gls{JSON} ritornato fosse corretto;
+		\item correzione della logica di api.ai nel caso fosse sbagliata la risposta;
+		\item controllo e correzione del codice nel caso il \gls{JSON} fosse corretto.
+	\end{itemize}
+\end{itemize}	 
+Questa procedura viene rappresentata nel seguente diagramma di flusso.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.5]{../Immagini/verifica.png}
+	\caption{Flowchart del processo di verifica dei chatbots}
+\end{figure}
 
