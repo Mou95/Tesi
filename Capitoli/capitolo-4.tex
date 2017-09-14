@@ -30,72 +30,72 @@ Durante la progettazione degli \emph{agents} per api.ai è stato necessario defi
 \subsubsection{Intent}
 Per quanto riguarda la progettazione del \gls{Chatbot} dedicato alla gestione di eventi, gli \emph{intents} che mi sono serviti per soddisfare tutti i requisiti sono stati i seguenti:
 \begin{itemize}
-	\item \textbf{durata\_conferenza}: permette all'utente di domandare la durata di una conferenza e viene attivato con domande come: \emph{"Quanto dura la conferenza Y?"}. La risposta del \gls{Chatbot} contiene il nome, l'inizio, la fine e la durata (in minuti o in ore) della conferenza richiesta dall'ospite;
+	\item \textbf{durata\_conferenza}: permette all'utente di domandare la durata di una conferenza. La risposta del \gls{Chatbot} contiene il nome, l'inizio, la fine e la durata (in minuti o in ore) della conferenza richiesta dall'ospite;
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/durata.png}
-		\caption{dfsf}
+		\caption{Esempio dell'intent durata\_conferenza}
 	\end{figure}
 	\item \textbf{luogo\_conferenza}: permette all'utente di domandare il luogo dove si svolgerà la conferenza. La risposta del \gls{Chatbot} contiene un carosello predefinito da Messenger, con tutte le informazioni sull'aula in questione;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/luogo.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent luogo\_conferenza}
 	\end{figure}		
 	\item \textbf{ora\_conferenza}: permette all'utente di chiedere l'orario di inizio e di fine di una conferenza. La risposta del \gls{Chatbot} contiene un carosello predefinito da Messenger, con tutte le informazioni sulla conferenza;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/ora_inizio.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent ora\_conferenza}
 	\end{figure}	
 \newpage	
 	\item \textbf{indicazioni\_stanza}: permette all'utente di domandare le indicazioni per trovare una determinata aula. La risposta del \gls{Chatbot} contiene le indicazioni presenti nel database, con una piccola mappa illustrativa;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/indicazioni.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent indicazioni\_stanza}
 	\end{figure}			
 	\item \textbf{programma\_giornata}: permette all'utente di domandare il programma dell'evento di un determinato giorno. La risposta del \gls{Chatbot} contiene un carosello per ogni conferenza in programma quel giorno;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/programma_data.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent programma\_giornata}
 	\end{figure}			
 	\item \textbf{programma\_no\_data}: permette all'utente di domandare quale conferenza si sta svolgendo in quel momento in una determinata stanza. La risposta del \gls{Chatbot} contiene un carosello con la conferenza in programma;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/richiesta_sole.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent programma\_no\_data}
 	\end{figure}			
 	\item \textbf{data\_ora\_stanza\_conferenza}: permette all'utente di domandare la conferenza in programma specificando data, ora e aula. La risposta del \gls{Chatbot} contiene un carosello con la conferenza in programma, se presente;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/stanza_data_ora.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent data\_ora\_stanza\_conferenza}
 	\end{figure}			
 	\item \textbf{data\_stanza\_conferenza}: permette all'utente di domandare la conferenza in programma specificando data e aula. La risposta del \gls{Chatbot} contiene un carosello con la conferenza in programma, se presente;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/stanza_data.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent data\_stanza\_conferenza}
 	\end{figure}			
 	\item \textbf{ora\_stanza\_conferenza}: permette all'utente di domandare la conferenza in programma specificando ora e aula. La risposta del \gls{Chatbot} contiene un carosello con la conferenza in programma, se presente;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/stanza_ora.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent ora\_stanza\_conferenza}
 	\end{figure}		
 	\item \textbf{visualizza\_agenda}: permette all'utente di visualizzare la propria agenda (cioè le conferenze che ha aggiunto precedentemente). La risposta contiene tutte le conferenze aggiunte all'agenda;
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/agenda.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent visualizza\_agenda}
 	\end{figure}			
 	\item \textbf{richiesta\_aiuto}: permette all'utente di ottenere delle informazioni per l'utilizzo del \gls{Chatbot}. La risposta contiene una breve spiegazione e delle domande che possono essere rivolte al bot.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.16]{../Immagini/aiuto.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent richiesta\_aiuto}
 	\end{figure}	
 \end{itemize}
 \newpage
@@ -137,14 +137,14 @@ Gli intents che ho deciso di creare per soddisfare tutti i requisiti sono i segu
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/richiesta_meteo.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent richiesta\_meteo}
 	\end{figure}	
 \newpage
 	\item \textbf{richiesta\_sole}: permette all'utente di chiedere se è previsto il sole in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto il sole, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/richiesta_sole.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent richiesta\_sole}
 	\end{figure}	
 	\item \textbf{richiesta\_pioggia}: permette all'utente di chiedere se è prevista pioggia in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista pioggia, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
 	\begin{figure}[!h]
@@ -152,50 +152,50 @@ Gli intents che ho deciso di creare per soddisfare tutti i requisiti sono i segu
 		\includegraphics[scale=0.15]{../Immagini/richiesta_pioggia.png}% "%" necessario
 		\qquad\qquad
 		\includegraphics[scale=0.15]{../Immagini/richiesta_pioggia2.png}
-		\caption{Didascalia comune alle due figure}
+		\caption{Esempio dell'intent richiesta\_pioggia}
 	\end{figure}
 	\item \textbf{richiesta\_nebbia}: permette all'utente di chiedere se è prevista nebbia in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista nebbia, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/richiesta_nebbia.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent richiesta\_nebbia}
 	\end{figure}
 	\item \textbf{richiesta\_neve}: permette all'utente di chiedere se è prevista neve in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è prevista neve, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/neve.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent richiesta\_neve}
 	\end{figure}
 	\item \textbf{richiesta\_bel\_tempo}: permette all'utente di chiedere se è previsto bel tempo in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto bel tempo, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/richiesta_bel_tempo.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent richiesta\_bel\_tempo}
 	\end{figure}
 	\item \textbf{richiesta\_brutto\_tempo}: permette all'utente di chiedere se è previsto brutto tempo in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta è formata da due messaggi: il primo mostra le giornate dove è previsto brutto tempo, tra quelle richieste dall'utente, il secondo contiene i caroselli delle previsioni.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/richiesta_brutto_tempo.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent richiesta\_brutto\_tempo}
 	\end{figure}
 	\item \textbf{richiesta\_temperature}: permette all'utente di chiedere le temperature previste in una specifica giornata o un periodo di tempo (es. weekend), in un determinato comune. La risposta contiene le temperature massimi e minime previste fornite da ARPA Veneto.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/temperature.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent richiesta\_temperature}
 	\end{figure}
 	\item \textbf{ascolta\_bollettino}: permette all'utente di chiedere il bollettino audio emesso da ARPA Veneto ogni giorno. La risposta contiene il file audio richiesto.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/bollettino.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent ascolta\_bollettino}
 	\end{figure}
 \newpage
 	\item \textbf{fenomeni\_particolari}: permette all'utente di chiedere se sono presenti avvisi o fenomeni particolari emessi da ARPAV. La risposta contiene questi avvisi, se presenti.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.15]{../Immagini/fenomeni.png}
-		\caption{Esempio di }
+		\caption{Esempio dell'intent fenomeni\_particolari}
 	\end{figure}
 
 \end{itemize}
